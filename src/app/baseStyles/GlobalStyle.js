@@ -1,11 +1,7 @@
+import { createGlobalStyle } from "styled-components";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
+export const GlobalStyle = createGlobalStyle`
+  body {
   position: relative;
   margin: 0;
   display: flex;
@@ -15,8 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
  
-  background-color: #fff;
-  /* background-color: ${(props) => props.theme.white}; */
+  background-color: ${(props) => props.theme.white};
   }
 
   code {
@@ -36,7 +31,7 @@ body {
     width: 100vw;
   }
 
-/* //-----reset-----// */
+//-----reset-----//
 h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   margin: 0;
@@ -54,15 +49,19 @@ img {
   height: auto;
 }
 
-/* //-----project slider-----// */
+//-----project slider-----//
+
+/* header {
+  background-color: #5c0080;
+  margin-bottom: 4rem;
+} */
 
 .header-wrapper {
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
   padding: 1rem 0;
-  color: #fff;
-  /* color: ${(props) => props.theme.white}; */
+  color: ${(props) => props.theme.white};
 }
 
 .header-wrapper h1 {
@@ -100,10 +99,8 @@ img {
 .image-gallery-slide .image-gallery-description{
   top: 0;
   bottom: auto;
-  color: #000;
-  /* color: ${(props) => props.theme.black}; */
-  background-color: #fff;
-  /* background-color: ${(props) => props.theme.white}; */
+  color: ${(props) => props.theme.black};
+  background-color: ${(props) => props.theme.white};
   font-size: 10px;
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -136,7 +133,7 @@ img {
   }
 }
 
-/* //-----add a file-----// */
+//-----add a file-----//
 .input-file-container {
   position: relative;
   width: 156px;
@@ -154,12 +151,9 @@ img {
 .js .input-file:focus + .input-file-trigger,
 .js .input-file-trigger:hover,
 .js .input-file-trigger:focus {
-  background: lightblue;
-  /* background: ${(props) => props.theme.accentBlue}; */
-  color: #fff;
-  /* color: ${(props) => props.theme.white}; */
-  box-shadow: 1px -1px 10px -2px rgba(0, 0, 0, 0.9) inset;
-  /* box-shadow: 1px -1px 10px -2px ${(props) => props.theme.blackOpacity} inset; */
+  background: ${(props) => props.theme.accentBlue};
+  color: ${(props) => props.theme.white};
+  box-shadow: 1px -1px 10px -2px ${(props) => props.theme.blackOpacity} inset;
 }
 
 .file-return {
@@ -172,8 +166,7 @@ img {
   font-style: italic;
   font-size: 0.7em;
   font-weight: 400;
-  color: #000;
-  /* color: ${(props) => props.theme.black}; */
+  color: ${(props) => props.theme.black};
 }
 .js .file-return:not(:empty):before {
   content: " ";
@@ -187,7 +180,7 @@ img {
   }
 }
 
-/* //-----swiper-----// */
+//-----swiper-----//
   .swiper-wrapper{
     width: 100%;
     /* padding: 20px; */
@@ -216,22 +209,18 @@ img {
   }
 
   .swiper-button-next::after {
-  color: rgba(200, 200, 200, 0.5);
-  /* color: ${(props) => props.theme.accentGrey}; */
+  color: ${(props) => props.theme.accentGrey};
 }
 
 .swiper-button-prev::after {
-  color: rgba(200, 200, 200, 0.5);
-  /* color: ${(props) => props.theme.accentGrey}; */
+  color: ${(props) => props.theme.accentGrey};
 }
 
 .swiper-pagination-bullet-active.swiper-pagination-bullet{
-  background-color: rgba(65, 45, 183, 1)!important;
-  /* background-color: ${(props) => props.theme.accentBlue}!important; */
+  background-color: ${(props) => props.theme.accentBlue}!important;
 }
 .swiper-pagination-bullet {
-  background-color:rgba(219, 47, 47, 1)!important;
-  /* background-color:${(props) => props.theme.accentRed}!important; */
+  background-color:${(props) => props.theme.accentRed}!important;
 }
 
 .containerJustifyEnd {
@@ -247,4 +236,40 @@ img {
     justify-content: center;
   };
 }
+#popup-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 45;
 
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+
+  background-color: #0000006b;
+  transition: opacity .3s linear 50ms, visibility .3s linear 50ms;
+}
+
+#root {
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: auto;
+  }
+}
+
+#popup-root {
+  z-index: 999;
+  &.is-hide {
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+
+      width: 0;
+      height: 0;
+  }
+}
+`;

@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import styled, { keyframes } from 'styled-components';
+import Link from "next/link";
+import styled, { keyframes } from "styled-components";
 
 const fadeInLeftAnimation = keyframes`
   0% {
@@ -55,10 +55,9 @@ export const NavList = styled.nav`
 export const NavListLink = styled(Link)`
   position: relative;
   display: inline-block;
-  color: black;
-  /* color: ${props => props.theme.black}; */
+  color: ${(props) => props.theme.black};
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
@@ -104,14 +103,13 @@ export const NavListLink = styled(Link)`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     left: 0;
     width: 240px;
     height: 1px;
-    /* background-color: ${props => props.theme.black}; */
-    background-color: black;
+    background-color: ${(props) => props.theme.black};
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
     transform-origin: left center;
@@ -139,10 +137,9 @@ export const ContactList = styled.ul`
 `;
 
 export const ContactListItem = styled.li`
-  color: black;
-  /* color: ${props => props.theme.black}; */
+  color: ${(props) => props.theme.black};
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 300;
   display: inline-block;
@@ -152,23 +149,21 @@ export const ContactListItem = styled.li`
   margin-top: 10px;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 240px;
     height: 1px;
-    background-color: black;
-    /* background-color: ${props => props.theme.black}; */
+    background-color: ${(props) => props.theme.black};
   }
 `;
 
 export const ContactListLink = styled.a`
   text-decoration: none;
-  color: black;
-  /* color: ${props => props.theme.black}; */
+  color: ${(props) => props.theme.black};
   font-size: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 300;
 
@@ -176,7 +171,7 @@ export const ContactListLink = styled.a`
     font-size: 14px;
   }
 
-  &:nth-child(1){
+  &:nth-child(1) {
     margin-bottom: 5px;
   }
 
@@ -208,21 +203,18 @@ export const SocialsList = styled.ul`
 export const SocialsListItem = styled.li`
   cursor: pointer;
   padding: 2px;
-  /* color: ${props => props.theme.black}; */
+  color: ${(props) => props.theme.black};
 
   &:not(:last-child) {
     margin-right: 20px;
   }
   & > *:hover,
   & > *:focus {
-    fill: rgba(219, 47, 47, 1);
-    /* fill: ${props => props.theme.accentRed}; */
+    fill: ${(props) => props.theme.accentRed};
   }
 
   & > * {
     /* fill: currentColor; */
-    fill: black;
-    /* fill: ${props => props.theme.black}; */
+    fill: ${(props) => props.theme.black};
   }
 `;
-
