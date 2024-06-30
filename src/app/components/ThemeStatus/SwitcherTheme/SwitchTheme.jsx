@@ -9,15 +9,15 @@ import Image from 'next/image';
 export const SwitchTheme = () => {
     return (
         <ThemeContext.Consumer>
-            {({ theme, setMode }) => (
+            {({ theme, setTheme }) => (
                 <SwitcherWrapper>
                     <BtnChangeTheme
                         aria-label="Change theme"
                         aria-expanded="true"
                         onClick={(e) =>
                             theme === 'light'
-                                ? setMode('dark')
-                                : setMode('light')
+                                ? setTheme('dark')
+                                : setTheme('light')
                         }
                     >
                         {theme === 'light' ? (

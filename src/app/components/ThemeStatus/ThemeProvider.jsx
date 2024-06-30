@@ -1,23 +1,24 @@
 'use client'
 import { createContext, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { useTheme } from '../../../hooks/useTheme';
 import { theme as Theme } from '../../baseStyles/Variables.styled';
 
 export const ThemeContext = createContext({});
 
 export const ThemeStatus = ({ children }) => {
-  const { theme, setMode } = useTheme();
-  const [selectedTheme, setSelectedTheme] = useState(theme);
-
+const [theme, setTheme] = useState('light');
   useEffect(() => {
-    setSelectedTheme(theme);
-    setMode(theme);
-  }, [setMode, theme]);
+      window?.localStorage?.getItem('theme')
+          ? setTheme(window?.localStorage?.getItem('theme'))
+          : window.matchMedia('(prefers-color-scheme: light)').matches
+            ? setTheme('light')
+            : setTheme('dark');
+  }, []);
+
 
   return (
-    <ThemeContext.Provider value={{ theme, setMode }}>
-      <ThemeProvider theme={Theme[selectedTheme]}>{children}</ThemeProvider>
-    </ThemeContext.Provider>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+          <ThemeProvider theme={Theme[theme]}>{children}</ThemeProvider>
+      </ThemeContext.Provider>
   );
 };

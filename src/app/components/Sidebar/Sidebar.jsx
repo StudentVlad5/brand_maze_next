@@ -23,7 +23,6 @@ import tiktok from '../../../../public/images/header/tiktok.svg';
 
 export const Sidebar = () => {
     const location = usePathname();
-    console.log('location', location);
     return (
         <SidebarContainer>
             <SidebarBox>
