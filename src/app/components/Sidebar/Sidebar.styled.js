@@ -1,5 +1,4 @@
-import { FaTiktok } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 
 const fadeInLeftAnimation = keyframes`
@@ -53,10 +52,11 @@ export const NavList = styled.nav`
   }
 `;
 
-export const NavListLink = styled(NavLink)`
+export const NavListLink = styled(Link)`
   position: relative;
   display: inline-block;
-  color: ${props => props.theme.black};
+  color: black;
+  /* color: ${props => props.theme.black}; */
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -110,7 +110,8 @@ export const NavListLink = styled(NavLink)`
     left: 0;
     width: 240px;
     height: 1px;
-    background-color: ${props => props.theme.black};
+    /* background-color: ${props => props.theme.black}; */
+    background-color: black;
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
     transform-origin: left center;
@@ -138,7 +139,8 @@ export const ContactList = styled.ul`
 `;
 
 export const ContactListItem = styled.li`
-  color: ${props => props.theme.black};
+  color: black;
+  /* color: ${props => props.theme.black}; */
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -156,13 +158,15 @@ export const ContactListItem = styled.li`
     left: 0;
     width: 240px;
     height: 1px;
-    background-color: ${props => props.theme.black};
+    background-color: black;
+    /* background-color: ${props => props.theme.black}; */
   }
 `;
 
 export const ContactListLink = styled.a`
   text-decoration: none;
-  color: ${props => props.theme.black};
+  color: black;
+  /* color: ${props => props.theme.black}; */
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -198,6 +202,7 @@ export const ContactListItemPhone = styled.li`
 export const SocialsList = styled.ul`
   display: flex;
   align-items: center;
+  list-style: none;
 `;
 
 export const SocialsListItem = styled.li`
@@ -210,19 +215,14 @@ export const SocialsListItem = styled.li`
   }
   & > *:hover,
   & > *:focus {
-    fill: ${props => props.theme.accentRed};
+    fill: rgba(219, 47, 47, 1);
+    /* fill: ${props => props.theme.accentRed}; */
   }
 
   & > * {
     /* fill: currentColor; */
-    fill: ${props => props.theme.black};
+    fill: black;
+    /* fill: ${props => props.theme.black}; */
   }
 `;
 
-export const TikTok = styled(FaTiktok)`
-  fill: ${props => props.theme.black};
-  &:hover,
-  &:focus {
-    fill: ${props => props.theme.accentRed};
-  }
-`;

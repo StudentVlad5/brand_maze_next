@@ -1,11 +1,11 @@
 'use client'
 
+import Image from 'next/image';
 import {
   ContactListItem,
   ContactListLink,
   SocialsList,
-  SocialsListItem,
-  TikTok,
+  SocialsListItem
 } from '../Sidebar.styled';
 import {
   ContactListMobile,
@@ -14,21 +14,22 @@ import {
   NavListMobile,
   NavListMobileItem,
 } from './MobileMenu.styled';
-import instagram from 'images/sprite.svg';
-import telegram from 'images/sprite.svg';
-import linkedin from 'images/sprite.svg';
-import close from 'images/sprite.svg';
 import { usePathname } from "next/navigation";
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { Logo } from '../../Header/Header.styled';
 import { useEffect, useState } from 'react';
 
+import instagram from '../../../../../public/images/header/instagram.svg';
+import telegram from '../../../../../public/images/header/telegram.svg';
+import linkedin from '../../../../../public/images/header/linkedin.svg';
+import tiktok from '../../../../../public/images/header/tiktok.svg';
+import close from '../../../../../public/images/header/close.svg';
 
 
 export const MobileMenu = () => {
  const [isOpen, setIsOpen] = useState(false);
   const location = usePathname();
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
    const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -51,9 +52,7 @@ useEffect(()=>{
  
   return (
     <>
-      <HeaderSvgMobile width="24" height="24" onClick={toggleMenu}>
-        <use href={close + '#close'}></use>
-      </HeaderSvgMobile>
+      <HeaderSvgMobile width="24" height="24" onClick={toggleMenu} src={close} alt="close button"/>
       <Logo>Brand maze</Logo>
 
       {isOpen && (
@@ -61,51 +60,56 @@ useEffect(()=>{
           <NavListMobile>
             <NavListMobileItem
               className={`link ${location === '/' ? 'active' : ''}`}
-              to="/"
+              href="/"
               aria-label="Home"
               onClick={toggleMenu}
             >
-              {t('Home')}
+              {'Home'}
+              {/* {t('Home')} */}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
-                location === '/about' ? 'active' : ''
+                location.includes('/about') ? 'active' : ''
               }`}
-              to="/about"
+              href="/about"
               aria-label="About"
               onClick={toggleMenu}
             >
-              {t('About')}
+              {'About'}
+              {/* {t('About')} */}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
-                location === '/services' ? 'active' : ''
+                location.includes('/services') ? 'active' : ''
               }`}
-              to="/services"
+              href="/services"
               aria-label="Services"
               onClick={toggleMenu}
             >
-              {t('Services')}
+              {'Services'}
+              {/* {t('Services')} */}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
-                location === '/projects' ? 'active' : ''
+                location.includes('/projects') ? 'active' : ''
               }`}
-              to="/projects"
+              href="/projects"
               aria-label="Projects"
               onClick={toggleMenu}
             >
-              {t('Projects')}
+              {'Projects'}
+              {/* {t('Projects')} */}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
-                location === '/contact' ? 'active' : ''
+                location.includes('/contact') ? 'active' : ''
               }`}
-              to="/contact"
+              href="/contact"
               aria-label="Contact"
               onClick={toggleMenu}
             >
-              {t('Contact')}
+              {'Contact'}
+              {/* {t('Contact')} */}
             </NavListMobileItem>
           </NavListMobile>
           <ContactListMobile>
@@ -135,9 +139,7 @@ useEffect(()=>{
                   rel="noopener noreferrer"
                   title="link to istagram"
                 >
-                  <svg width="20" height="20">
-                    <use href={instagram + '#instagram'}></use>
-                  </svg>
+                  <Image width="20" height="20" src={instagram} alt="link to instagram"/>
                 </a>
               </SocialsListItem>
               <SocialsListItem>
@@ -147,9 +149,7 @@ useEffect(()=>{
                   rel="noopener noreferrer"
                   title="link to telegram"
                 >
-                  <svg width="22" height="22">
-                    <use href={telegram + '#telegram'}></use>
-                  </svg>
+                  <Image width="20" height="20" src={telegram} alt="link to telegram"/>
                 </a>
               </SocialsListItem>
               <SocialsListItem>
@@ -159,7 +159,7 @@ useEffect(()=>{
                   rel="noopener noreferrer"
                   title="link to tiktok"
                 >
-                  <TikTok />
+                   <Image width="20" height="20" src={tiktok} alt="link to tiktok"/>
                 </a>
               </SocialsListItem>
               <SocialsListItem>
@@ -169,9 +169,7 @@ useEffect(()=>{
                   rel="noopener noreferrer"
                   title="link to linkedin"
                 >
-                  <svg width="20" height="20">
-                    <use href={linkedin + '#linkedin'}></use>
-                  </svg>
+                   <Image width="20" height="20" src={linkedin} alt="link to linkedin"/>
                 </a>
               </SocialsListItem>
             </SocialsList>

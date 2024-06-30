@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { NavListLink } from "../Sidebar.styled";
+import Image from "next/image";
 
 export const MobileMenuBox = styled.div`
   height: 100%;
@@ -28,7 +29,7 @@ export const MobileMenuBox = styled.div`
   }
 `;
 
-export const HeaderSvgMobile = styled.svg`
+export const HeaderSvgMobile = styled(Image)`
   fill: currentColor;
   position: absolute;
   top: 20px;

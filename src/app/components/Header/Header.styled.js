@@ -1,5 +1,6 @@
 import { keyframes, styled } from "styled-components";
-import { MdPlayCircleOutline } from "react-icons/md";
+import Image from 'next/image';
+import mdPlayCircleOutline from "../../../../public/images/header/circle_play_icon.svg";
 
 const fadeInTopAnimation = keyframes`
   0% {
@@ -12,7 +13,7 @@ const fadeInTopAnimation = keyframes`
   }
 `;
 
-export const Header = styled.header<{ props: string, isvisible: string }>`
+export const Header = styled.header`
   color: ${(props) => props.theme.black};
   background-color: transparent;
   position: fixed;
@@ -22,7 +23,7 @@ export const Header = styled.header<{ props: string, isvisible: string }>`
   @media screen and (max-width: 1279.9px) {
     width: 100%;
     height: 45px;
-    opacity: ${({ isvisible }) => (isvisible === 'true' ? 1 : 0)};
+    opacity: ${({ $isvisible }) => ($isvisible === "true" ? 1 : 0)};
     transition: opacity 0.3s, transform 0.3s;
     z-index: 500;
   }
@@ -69,7 +70,7 @@ export const LogoBox = styled.a`
   z-index: 999;
 `;
 
-export const HeaderSvg = styled.svg`
+export const HeaderSvg = styled(Image)`
   fill: currentColor;
   cursor: pointer;
   position: absolute;
@@ -81,7 +82,7 @@ export const HeaderSvg = styled.svg`
     display: none;
   }
 `;
-export const MovieIcon = styled(MdPlayCircleOutline)`
+export const MovieIcon = styled(mdPlayCircleOutline)`
   position: absolute;
   left: 170px;
   top: 22px;

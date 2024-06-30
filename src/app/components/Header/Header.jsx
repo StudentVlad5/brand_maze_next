@@ -1,21 +1,25 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import menu from '../../../../public/images/sprite.svg';
+import menu from '../../../../public/images/header/menu.svg';
 
-// import { MobileMenuBox } from 'components/Sidebar/MobileMenu/MobileMenu.styled';
-// import { SwitchTheme } from 'components/ThemeStatus/SwitcherTheme/SwitchTheme';
+import { SwitchTheme } from '../ThemeStatus/SwitcherTheme/SwitchTheme';
 import { Header, HeaderSvg, Logo, LogoBox, MovieIcon } from './Header.styled';
-// import { MobileMenu } from '../Sidebar/MobileMenu/MobileMenu';
+import { MobileMenu } from '../Sidebar/MobileMenu/MobileMenu';
+import { MobileMenuBox } from '../Sidebar/MobileMenu/MobileMenu.styled';
 // import Language from 'components/Language/Language';
 // import { openModalWindow } from '../../hooks/ModalWindow';
 // import { ModalWindow } from '../ModalWindow/ModalWindow';
 
-
-export default function HeaderComp () {
+export default function HeaderComp() {
     const [isOpen, setIsOpen] = useState(false);
     const [visible, setVisible] = useState('true');
-    const [scrollPos, setScrollPos] = useState(window.scrollY);
+    // const [scrollPos, setScrollPos] = useState(window.scrollY);
+    const [scrollPos, setScrollPos] = useState('');
+
+    useEffect(() => {
+        setScrollPos(window.scrollY);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,7 +44,7 @@ export default function HeaderComp () {
 
     return (
         <>
-            <Header isvisible={visible}>
+            <Header $isvisible={visible}>
                 <LogoBox href="/brand-maze" aria-label="logo company">
                     <Logo>Brand maze</Logo>
                 </LogoBox>
@@ -53,23 +57,27 @@ export default function HeaderComp () {
                         width: '100%',
                     }}
                 >
-                    {/* <Language />
-                    <SwitchTheme /> */}
+                    {/* <Language /> */}
+                    <SwitchTheme />
                 </div>
-                <HeaderSvg width="24" height="24" onClick={toggleMenu}>
-                    <use href={menu + '#menu'}></use>
-                </HeaderSvg>
-                {/* <MobileMenuBox
+                <HeaderSvg
+                    width="24"
+                    height="24"
+                    alt="menu's button"
+                    onClick={toggleMenu}
+                    src={menu}
+                />
+                <MobileMenuBox
                     className={`collapsed ${isOpen ? 'is-expanded' : ''}`}
                 >
                     <MobileMenu
-                        // isOpen={isOpen}
-                        // toggleMenu={toggleMenu}
-                        // setIsOpen={setIsOpen}
+                        isOpen={isOpen}
+                        toggleMenu={toggleMenu}
+                        setIsOpen={setIsOpen}
                     />
-                </MobileMenuBox> */}
+                </MobileMenuBox>
             </Header>
             {/* <ModalWindow /> */}
         </>
     );
-};
+}
