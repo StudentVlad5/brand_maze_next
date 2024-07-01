@@ -21,7 +21,7 @@ import telegram from '../../../../public/images/header/telegram.svg';
 import linkedin from '../../../../public/images/header/linkedin.svg';
 import tiktok from '../../../../public/images/header/tiktok.svg';
 
-export const Sidebar = () => {
+export const Sidebar = ({lang}) => {
     const location = usePathname();
     return (
         <SidebarContainer>
@@ -29,7 +29,7 @@ export const Sidebar = () => {
                 <NavList>
                     <NavListLink
                         className={`link ${location === '/' ? 'active' : ''}`}
-                        href="/"
+                        href={`/`}
                         aria-label="Home"
                     >
                         {'Home'}
@@ -37,7 +37,7 @@ export const Sidebar = () => {
                     </NavListLink>
                     <NavListLink
                         className={`link ${location === '/about' ? 'active' : ''}`}
-                        href="/about"
+                        href={`/${lang}/about`}
                         aria-label="About"
                     >
                         {'About'}
@@ -47,7 +47,7 @@ export const Sidebar = () => {
                         className={`link ${
                             location === '/services' ? 'active' : ''
                         }`}
-                        href="/services"
+                        href={`/${lang}/services`}
                         aria-label="Services"
                     >
                         {'Services'}
@@ -57,7 +57,7 @@ export const Sidebar = () => {
                         className={`link ${
                             location === '/projects' ? 'active' : ''
                         }`}
-                        href="/projects"
+                        href={`/${lang}/projects`}
                         aria-label="Projects"
                     >
                         {'Projects'}
@@ -67,7 +67,7 @@ export const Sidebar = () => {
                         className={`link ${
                             location === '/contact' ? 'active' : ''
                         }`}
-                        href="/contact"
+                        href={`/${lang}/contact`}
                         aria-label="Contact"
                     >
                         {'Contact'}

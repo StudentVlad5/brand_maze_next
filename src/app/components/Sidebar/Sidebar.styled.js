@@ -27,6 +27,7 @@ export const SidebarContainer = styled.aside`
   @media screen and (min-width: 1280px) {
     padding-top: 10px;
     padding-left: 20px;
+    width: 320px;
   }
 `;
 
@@ -35,7 +36,7 @@ export const SidebarBox = styled.div`
 
   @media screen and (min-width: 1280px) {
     display: block;
-    width: 320px;
+    height: 100vh;
   }
 `;
 

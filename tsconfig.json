@@ -27,7 +27,8 @@
         ".next/types/**/*.ts",
         "**/*.ts",
         "**/*.tsx",
-        "src/app/components/Header/Header.jsx"
+        "src/app/components/Header/Header.jsx",
+        "src/i18n/settings.js"
     ],
     "exclude": ["node_modules"]
 }

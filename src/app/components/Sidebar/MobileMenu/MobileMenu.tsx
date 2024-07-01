@@ -26,7 +26,7 @@ import tiktok from '../../../../../public/images/header/tiktok.svg';
 import close from '../../../../../public/images/header/close.svg';
 
 
-export const MobileMenu = () => {
+export const MobileMenu = ({ lang }: any) => {
  const [isOpen, setIsOpen] = useState(false);
   const location = usePathname();
   // const { t } = useTranslation();
@@ -49,7 +49,7 @@ useEffect(()=>{
   }
 
 }, [isOpen])
- 
+ console.log("lang", lang)
   return (
     <>
       <HeaderSvgMobile width="24" height="24" onClick={toggleMenu} src={close} alt="close button"/>
@@ -60,7 +60,7 @@ useEffect(()=>{
           <NavListMobile>
             <NavListMobileItem
               className={`link ${location === '/' ? 'active' : ''}`}
-              href="/"
+              href={`/`}
               aria-label="Home"
               onClick={toggleMenu}
             >
@@ -71,7 +71,7 @@ useEffect(()=>{
               className={`link ${
                 location.includes('/about') ? 'active' : ''
               }`}
-              href="/about"
+              href={`/${lang}/about`}
               aria-label="About"
               onClick={toggleMenu}
             >
@@ -82,7 +82,7 @@ useEffect(()=>{
               className={`link ${
                 location.includes('/services') ? 'active' : ''
               }`}
-              href="/services"
+              href={`/${lang}/services`}
               aria-label="Services"
               onClick={toggleMenu}
             >
@@ -93,7 +93,7 @@ useEffect(()=>{
               className={`link ${
                 location.includes('/projects') ? 'active' : ''
               }`}
-              href="/projects"
+              href={`/${lang}/projects`}
               aria-label="Projects"
               onClick={toggleMenu}
             >
@@ -104,7 +104,7 @@ useEffect(()=>{
               className={`link ${
                 location.includes('/contact') ? 'active' : ''
               }`}
-              href="/contact"
+              href={`/${lang}/contact`}
               aria-label="Contact"
               onClick={toggleMenu}
             >

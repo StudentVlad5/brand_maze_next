@@ -1,12 +1,16 @@
 import React from 'react';
+import { useTranslation } from '../i18n'
 
 
-export default function Home() {
-  return (
+export default async  function Home({ params: { lng } }: {
+  params: {
+    lng: string;
+  };
+}) {
+  const { t } = await useTranslation(lng)
+  return ( 
     <>
-    <main>
-      <h1 className="text-xl">Home page</h1>
-    </main>
+      <h1>{t('Home page')}</h1>
     </>
   );
 }

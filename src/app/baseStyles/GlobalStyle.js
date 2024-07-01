@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     'Manrope', 'Oswald', 'Montserrat', 'Bungee', 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+ text-align: left;
   background-color: ${(props) => props.theme.white};
   }
 
@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
   main {
     width: 100%;
     min-height: calc(100vh - 50px);
+    display: flex;
+
   }
   #canvas_mouse{
     position: fixed;

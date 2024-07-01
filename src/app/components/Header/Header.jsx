@@ -7,11 +7,11 @@ import { SwitchTheme } from '../ThemeStatus/SwitcherTheme/SwitchTheme';
 import { Header, HeaderSvg, Logo, LogoBox, MovieIcon } from './Header.styled';
 import { MobileMenu } from '../Sidebar/MobileMenu/MobileMenu';
 import { MobileMenuBox } from '../Sidebar/MobileMenu/MobileMenu.styled';
-// import Language from 'components/Language/Language';
+import Language from '../Language/Language';
 // import { openModalWindow } from '../../hooks/ModalWindow';
 // import { ModalWindow } from '../ModalWindow/ModalWindow';
 
-export default function HeaderComp() {
+export default function HeaderComp({ lang }) {
     const [isOpen, setIsOpen] = useState(false);
     const [visible, setVisible] = useState('true');
     // const [scrollPos, setScrollPos] = useState(window.scrollY);
@@ -57,7 +57,7 @@ export default function HeaderComp() {
                         width: '100%',
                     }}
                 >
-                    {/* <Language /> */}
+                    <Language />
                     <SwitchTheme />
                 </div>
                 <HeaderSvg
@@ -74,6 +74,7 @@ export default function HeaderComp() {
                         isOpen={isOpen}
                         toggleMenu={toggleMenu}
                         setIsOpen={setIsOpen}
+                        lang={lang}
                     />
                 </MobileMenuBox>
             </Header>
