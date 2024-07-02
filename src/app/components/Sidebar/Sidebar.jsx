@@ -16,10 +16,10 @@ import {
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
-import instagram from '../../../../public/images/header/instagram.svg';
-import telegram from '../../../../public/images/header/telegram.svg';
-import linkedin from '../../../../public/images/header/linkedin.svg';
-import tiktok from '../../../../public/images/header/tiktok.svg';
+import instagram from '@/images/header/instagram.svg';
+import telegram from '@/images/header/telegram.svg';
+import linkedin from '@/images/header/linkedin.svg';
+import tiktok from '@/images/header/tiktok.svg';
 
 export const Sidebar = ({lang}) => {
     const location = usePathname();

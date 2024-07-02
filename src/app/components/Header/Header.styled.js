@@ -1,6 +1,6 @@
 import { keyframes, styled } from "styled-components";
 import Image from 'next/image';
-import mdPlayCircleOutline from "../../../../public/images/header/circle_play_icon.svg";
+import mdPlayCircleOutline from "@/images/header/circle_play_icon.svg";
 
 const fadeInTopAnimation = keyframes`
   0% {

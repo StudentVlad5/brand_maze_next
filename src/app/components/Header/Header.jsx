@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import menu from '../../../../public/images/header/menu.svg';
+import menu from '@/images/header/menu.svg';
 
 import { SwitchTheme } from '../ThemeStatus/SwitcherTheme/SwitchTheme';
 import { Header, HeaderSvg, Logo, LogoBox, MovieIcon } from './Header.styled';
@@ -11,7 +11,7 @@ import Language from '../Language/Language';
 // import { openModalWindow } from '../../hooks/ModalWindow';
 // import { ModalWindow } from '../ModalWindow/ModalWindow';
 
-export default function HeaderComp({ lang }) {
+export default function HeaderComp({ lang, setLanguage }) {
     const [isOpen, setIsOpen] = useState(false);
     const [visible, setVisible] = useState('true');
     // const [scrollPos, setScrollPos] = useState(window.scrollY);
@@ -57,7 +57,7 @@ export default function HeaderComp({ lang }) {
                         width: '100%',
                     }}
                 >
-                    <Language />
+                    <Language language={lang} setLanguage={setLanguage} />
                     <SwitchTheme />
                 </div>
                 <HeaderSvg

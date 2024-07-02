@@ -1,16 +1,13 @@
-import React from 'react';
-import { useTranslation } from '../i18n'
+'use client'
+import React, {useContext} from 'react';
+import { Context } from './components/Language/LanguageContext';
 
+import Home from './components/Home/Home';
 
-export default async  function Home({ params: { lng } }: {
-  params: {
-    lng: string;
-  };
-}) {
-  const { t } = await useTranslation(lng)
+export default function HomPage() {
+const { language } = useContext(Context)
+console.log("language", language);
   return ( 
-    <>
-      <h1>{t('Home page')}</h1>
-    </>
+      <Home language={language}/>       
   );
 }

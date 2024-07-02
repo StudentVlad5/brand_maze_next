@@ -1,15 +1,13 @@
 'use client'
-import React from 'react';
-// import { Plus_Jakarta_Sans } from 'next/font/google';
+import React, { useState } from 'react';
 import { Sidebar } from './components/Sidebar/Sidebar';
-// import './globals.css';
 import { ThemeStatus } from './components/ThemeStatus/ThemeProvider';
-import { LanguageStatus,  LanguageContext} from './components/Language/LanguageProvider';
 import StyledComponentRegistry from '../lib/registry';
 import { Providers } from './providers';
 import HeaderComp from './components/Header/Header';
-import { dir } from 'i18next';
-import { languages, fallbackLng } from '../i18n/settings';
+import { Context } from './components/Language/LanguageContext';
+import  Provideri18  from './i18/provideri18';
+import i18n from "./i18/i18n";
 
 // export async function generateStaticParams() {
 //   return languages.map((lng) => ({ lng }))
@@ -18,24 +16,28 @@ import { languages, fallbackLng } from '../i18n/settings';
 // const font = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export default function RootLayout({
-  children, params: { lng } 
+  children
 }: {
   children: React.ReactNode;
   params: {
-    lng: string;
+    lang: string;
+    setLanguage: any;
   }
 }) {
-  // if (languages.indexOf(lng) < 0){lng = fallbackLng};
-  // if (!lng){lng = "en"};
+  const [language, setLanguage] = useState('en')
+  const value = {
+    language, setLanguage
+  }
+    console.log("i18n.language", i18n.language)
   return (
-    <LanguageStatus>
-      <LanguageContext.Consumer>
-        {({ language, setLanguage }) => (
-        <html lang={language} dir={dir(language)}>
+
+     <Context.Provider value={value}>
+      <Provideri18>
+        <html lang={i18n.language}>
           <ThemeStatus>
           <body>
             <StyledComponentRegistry>
-              <HeaderComp lang={language}/>
+              <HeaderComp lang={language} setLanguage={setLanguage}/>
               <main>
                 <Sidebar lang={language}/>
                 <Providers>{children}</Providers>
@@ -44,8 +46,7 @@ export default function RootLayout({
           </body>
           </ThemeStatus>
         </html>
-        )}
-      </LanguageContext.Consumer>
-    </LanguageStatus>
+      </Provideri18>
+  </Context.Provider>
   );
 }
