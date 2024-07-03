@@ -30,6 +30,6 @@
         "**/*.tsx",
         "src/components/Header/Header.jsx",
         "src/i18n/settings.js"
-    ],
+, "src/components/Sidebar/MobileMenu/MobileMenu.jsx"    ],
     "exclude": ["node_modules"]
 }

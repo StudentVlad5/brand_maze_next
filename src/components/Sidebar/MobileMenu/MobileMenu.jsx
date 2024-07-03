@@ -26,13 +26,13 @@ import tiktok from '@/images/header/tiktok.svg';
 import close from '@/images/header/close.svg';
 
 
-export const MobileMenu = () => {
- const [isOpen, setIsOpen] = useState(false);
+export const MobileMenu = ({isOpen, toggleMenu, setIsOpen}) => {
+//  const [isOpen, setIsOpen] = useState(false);
   const location = usePathname();
   const { t } = useTranslation();
-   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  //  const toggleMenu = () => {
+  //   setIsOpen(!isOpen);
+  // };
 useEffect(()=>{
   const stylebody = document.querySelector('body');
  if (isOpen) {
@@ -47,7 +47,8 @@ useEffect(()=>{
         if(stylebody){stylebody.style.overflow = 'visible'};
     // document.querySelector('body').style.overflow = 'visible';
   }
-}, [isOpen])
+}, [isOpen, setIsOpen]);
+console.log("isOpen", isOpen)
   return (
     <>
       <HeaderSvgMobile width="24" height="24" onClick={toggleMenu} src={close} alt="close button"/>
