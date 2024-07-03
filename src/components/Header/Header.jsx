@@ -96,6 +96,7 @@ const { theme } = useContext(ThemeContext);
                         isOpen={isOpen}
                         toggleMenu={toggleMenu}
                         setIsOpen={setIsOpen}
+                        theme={theme}
                     />
                 </MobileMenuBox>
             </Header>

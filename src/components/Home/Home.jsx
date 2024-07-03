@@ -28,7 +28,6 @@ import { useTranslation } from 'react-i18next';
 import ph from '@/images/home/ph.png';
 
 export const Home = () => {
-    // Aos.init();
     const { t } = useTranslation();
 
     useEffect(() => {

@@ -12,18 +12,25 @@ import {
     ContactListItemPhone,
 } from './Sidebar.styled';
 
-// import { useTranslation } from 'react-i18next';
+import React, { useContext } from 'react';
 import { usePathname } from 'next/navigation';
+import { ThemeContext } from '../ThemeStatus/ThemeProvider';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import instagram from '@/images/header/instagram.svg';
 import telegram from '@/images/header/telegram.svg';
 import linkedin from '@/images/header/linkedin.svg';
 import tiktok from '@/images/header/tiktok.svg';
+import instagramDark from '@/images/header/instagram-dark.svg';
+import telegramDark from '@/images/header/telegram-dark.svg';
+import linkedinDark from '@/images/header/linkedin-dark.svg';
+import tiktokDark from '@/images/header/tiktok-dark.svg';
 
 export const Sidebar = () => {
     const location = usePathname();
-        const { t } = useTranslation();
+    const { t } = useTranslation();
+    const { theme } = useContext(ThemeContext);
+
     return (
         <SidebarContainer>
             <SidebarBox>
@@ -96,12 +103,21 @@ export const Sidebar = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image
-                                    width="20"
-                                    height="20"
-                                    src={instagram}
-                                    alt="link to instagram"
-                                />
+                                {theme === 'light' ? (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={instagram}
+                                        alt="link to instagram"
+                                    />
+                                ) : (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={instagramDark}
+                                        alt="link to instagram"
+                                    />
+                                )}
                             </a>
                         </SocialsListItem>
                         <SocialsListItem>
@@ -110,12 +126,21 @@ export const Sidebar = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image
-                                    width="20"
-                                    height="20"
-                                    src={telegram}
-                                    alt="link to telegram"
-                                />
+                                {theme === 'light' ? (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={telegram}
+                                        alt="link to telegram"
+                                    />
+                                ) : (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={telegramDark}
+                                        alt="link to telegram"
+                                    />
+                                )}
                             </a>
                         </SocialsListItem>
                         <SocialsListItem>
@@ -124,12 +149,21 @@ export const Sidebar = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image
-                                    width="20"
-                                    height="20"
-                                    src={tiktok}
-                                    alt="link to tiktok"
-                                />
+                                {theme === 'light' ? (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={tiktok}
+                                        alt="link to tiktok"
+                                    />
+                                ) : (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={tiktokDark}
+                                        alt="link to tiktok"
+                                    />
+                                )}
                             </a>
                         </SocialsListItem>
                         <SocialsListItem>
@@ -138,12 +172,21 @@ export const Sidebar = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image
-                                    width="20"
-                                    height="20"
-                                    src={linkedin}
-                                    alt="link to linkedin"
-                                />
+                                {theme === 'light' ? (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={linkedin}
+                                        alt="link to linkedin"
+                                    />
+                                ) : (
+                                    <Image
+                                        width="20"
+                                        height="20"
+                                        src={linkedinDark}
+                                        alt="link to linkedin"
+                                    />
+                                )}
                             </a>
                         </SocialsListItem>
                     </SocialsList>

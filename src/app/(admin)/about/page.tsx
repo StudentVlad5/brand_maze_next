@@ -1,11 +1,7 @@
-export default function Home({ params: { lng } }: {
-  params: {
-    lng: string;
-  };
-}) {
+import { About } from '@/components/About/About';
+
+export default function AboutPage() {
   return (
-    <main>
-      <h1>About</h1>
-    </main>
+    <About/>
   );
 }
