@@ -15,7 +15,7 @@ import {
 // import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-
+import { useTranslation } from 'react-i18next';
 import instagram from '@/images/header/instagram.svg';
 import telegram from '@/images/header/telegram.svg';
 import linkedin from '@/images/header/linkedin.svg';
@@ -23,6 +23,7 @@ import tiktok from '@/images/header/tiktok.svg';
 
 export const Sidebar = () => {
     const location = usePathname();
+        const { t } = useTranslation();
     return (
         <SidebarContainer>
             <SidebarBox>
@@ -32,16 +33,14 @@ export const Sidebar = () => {
                         href={`/`}
                         aria-label="Home"
                     >
-                        {'Home'}
-                        {/* {t('Home')} */}
+                        {t('Home')}
                     </NavListLink>
                     <NavListLink
                         className={`link ${location === '/about' ? 'active' : ''}`}
                         href={`/about`}
                         aria-label="About"
                     >
-                        {'About'}
-                        {/* {t('About')} */}
+                        {t('About')}
                     </NavListLink>
                     <NavListLink
                         className={`link ${
@@ -50,8 +49,7 @@ export const Sidebar = () => {
                         href={`/services`}
                         aria-label="Services"
                     >
-                        {'Services'}
-                        {/* {t('Services')} */}
+                        {t('Services')}
                     </NavListLink>
                     <NavListLink
                         className={`link ${
@@ -60,8 +58,7 @@ export const Sidebar = () => {
                         href={`/projects`}
                         aria-label="Projects"
                     >
-                        {'Projects'}
-                        {/* {t('Projects')} */}
+                        {t('Projects')}
                     </NavListLink>
                     <NavListLink
                         className={`link ${
@@ -70,8 +67,7 @@ export const Sidebar = () => {
                         href={`/contact`}
                         aria-label="Contact"
                     >
-                        {'Contact'}
-                        {/* {t('Contact')} */}
+                        {t('Contact')}
                     </NavListLink>
                 </NavList>
                 <ContactList>

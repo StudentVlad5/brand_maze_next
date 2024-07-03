@@ -1,13 +1,17 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import menu from '@/images/header/menu.svg';
+import menuDark from '@/images/header/menu-dark.svg';
 
 import { SwitchTheme } from '../ThemeStatus/SwitcherTheme/SwitchTheme';
 import { Header, HeaderSvg, Logo, LogoBox, MovieIcon } from './Header.styled';
 import { MobileMenu } from '../Sidebar/MobileMenu/MobileMenu';
 import { MobileMenuBox } from '../Sidebar/MobileMenu/MobileMenu.styled';
 import Language from '../Language/Language';
+import Image from 'next/image';
+import { ThemeContext } from '../ThemeStatus/ThemeProvider';
+
 // import { openModalWindow } from '../../hooks/ModalWindow';
 // import { ModalWindow } from '../ModalWindow/ModalWindow';
 
@@ -16,6 +20,7 @@ export default function HeaderComp({ lang, setLanguage }) {
     const [visible, setVisible] = useState('true');
     // const [scrollPos, setScrollPos] = useState(window.scrollY);
     const [scrollPos, setScrollPos] = useState('');
+const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         setScrollPos(window.scrollY);
@@ -61,12 +66,29 @@ export default function HeaderComp({ lang, setLanguage }) {
                     <SwitchTheme />
                 </div>
                 <HeaderSvg
-                    width="24"
-                    height="24"
-                    alt="menu's button"
+                    type="button"
+                    title="menu"
+                    aria-label="menu"
                     onClick={toggleMenu}
-                    src={menu}
-                />
+                >
+                    {theme === 'light' ? (
+                        <Image
+                            className="svgMenu"
+                            width="24"
+                            height="24"
+                            alt="menu's button"
+                            src={menu}
+                        />
+                    ) : (
+                        <Image
+                            className="svgMenu"
+                            width="24"
+                            height="24"
+                            alt="menu's button"
+                            src={menuDark}
+                        />
+                    )}
+                </HeaderSvg>
                 <MobileMenuBox
                     className={`collapsed ${isOpen ? 'is-expanded' : ''}`}
                 >
@@ -74,7 +96,6 @@ export default function HeaderComp({ lang, setLanguage }) {
                         isOpen={isOpen}
                         toggleMenu={toggleMenu}
                         setIsOpen={setIsOpen}
-                        lang={lang}
                     />
                 </MobileMenuBox>
             </Header>

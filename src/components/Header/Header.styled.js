@@ -1,5 +1,4 @@
 import { keyframes, styled } from "styled-components";
-import Image from 'next/image';
 import mdPlayCircleOutline from "@/images/header/circle_play_icon.svg";
 
 const fadeInTopAnimation = keyframes`
@@ -19,6 +18,7 @@ export const Header = styled.header`
   position: fixed;
   display: flex;
   width: 100%;
+  max-width: 300px;
 
   @media screen and (max-width: 1279.9px) {
     width: 100%;
@@ -70,13 +70,19 @@ export const LogoBox = styled.a`
   z-index: 999;
 `;
 
-export const HeaderSvg = styled(Image)`
-  fill: currentColor;
+export const HeaderSvg = styled.button`
   cursor: pointer;
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 12px;
   animation: ${fadeInTopAnimation} 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  background-color: ${(props) => props.theme.white};
+  border: none;
+  color: ${(props) => props.theme.white};
+  &:hover {
+    transform: scale(1.1);
+  }
+ 
 
   @media screen and (min-width: 1280px) {
     display: none;

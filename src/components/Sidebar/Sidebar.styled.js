@@ -27,7 +27,7 @@ export const SidebarContainer = styled.aside`
   @media screen and (min-width: 1280px) {
     padding-top: 10px;
     padding-left: 20px;
-    width: 320px;
+    width: 400px;
   }
 `;
 

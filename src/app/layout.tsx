@@ -1,13 +1,14 @@
 'use client'
 import React, { useState } from 'react';
-import { Sidebar } from './components/Sidebar/Sidebar';
-import { ThemeStatus } from './components/ThemeStatus/ThemeProvider';
+import { Sidebar } from '../components/Sidebar/Sidebar';
+import { ThemeStatus } from '../components/ThemeStatus/ThemeProvider';
 import StyledComponentRegistry from '../lib/registry';
 import { Providers } from './providers';
-import HeaderComp from './components/Header/Header';
-import { Context } from './components/Language/LanguageContext';
+import HeaderComp from '../components/Header/Header';
+import { Context } from '../components/Language/LanguageContext';
 import  Provideri18  from './i18/provideri18';
 import i18n from "./i18/i18n";
+import AOS from "@/components/AOS/AOS"
 
 // export async function generateStaticParams() {
 //   return languages.map((lng) => ({ lng }))
@@ -35,13 +36,16 @@ export default function RootLayout({
         <html lang={i18n.language}>
           <ThemeStatus>
           <body>
-            <StyledComponentRegistry>
-              <HeaderComp lang={language} setLanguage={setLanguage}/>
-              <main>
-                <Sidebar/>
-                <Providers>{children}</Providers>
-              </main>
-            </StyledComponentRegistry>
+            <div className="BaseContainer">
+            <AOS/>
+              <StyledComponentRegistry>
+                <HeaderComp lang={language} setLanguage={setLanguage}/>
+                <main>
+                  <Sidebar/>
+                  <Providers>{children}</Providers>
+                </main>
+              </StyledComponentRegistry>
+            </div>
           </body>
           </ThemeStatus>
         </html>

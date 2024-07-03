@@ -12,6 +12,7 @@
     "@eslint/config-array": "^0.16.0",
     "@eslint/object-schema": "^2.1.4",
     "accept-language": "^3.0.18",
+    "aos": "^2.3.4",
     "eslint-config-prettier": "^9.1.0",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
@@ -21,7 +22,8 @@
     "react": "^18",
     "react-dom": "^18.3.1",
     "react-i18next": "^14.1.2",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@types/node": "^20",

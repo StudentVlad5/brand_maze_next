@@ -42,7 +42,7 @@ const SwitcherWrapper = styled.div`
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
-    right: 55px;
+    right: 60px;
     top: 20px;
   }
 

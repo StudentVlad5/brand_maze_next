@@ -15,7 +15,7 @@ import {
   NavListMobileItem,
 } from './MobileMenu.styled';
 import { usePathname } from "next/navigation";
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { Logo } from '../../Header/Header.styled';
 import { useEffect, useState } from 'react';
 
@@ -26,10 +26,10 @@ import tiktok from '@/images/header/tiktok.svg';
 import close from '@/images/header/close.svg';
 
 
-export const MobileMenu = ({ lang }: any) => {
+export const MobileMenu = () => {
  const [isOpen, setIsOpen] = useState(false);
   const location = usePathname();
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
    const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -47,7 +47,6 @@ useEffect(()=>{
         if(stylebody){stylebody.style.overflow = 'visible'};
     // document.querySelector('body').style.overflow = 'visible';
   }
-
 }, [isOpen])
   return (
     <>
@@ -63,52 +62,47 @@ useEffect(()=>{
               aria-label="Home"
               onClick={toggleMenu}
             >
-              {'Home'}
-              {/* {t('Home')} */}
+              {t('Home')}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
                 location.includes('/about') ? 'active' : ''
               }`}
-              href={`/${lang}/about`}
+              href={`/about`}
               aria-label="About"
               onClick={toggleMenu}
             >
-              {'About'}
-              {/* {t('About')} */}
+              {t('About')}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
                 location.includes('/services') ? 'active' : ''
               }`}
-              href={`/${lang}/services`}
+              href={`/services`}
               aria-label="Services"
               onClick={toggleMenu}
             >
-              {'Services'}
-              {/* {t('Services')} */}
+              {t('Services')}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
                 location.includes('/projects') ? 'active' : ''
               }`}
-              href={`/${lang}/projects`}
+              href={`/projects`}
               aria-label="Projects"
               onClick={toggleMenu}
             >
-              {'Projects'}
-              {/* {t('Projects')} */}
+              {t('Projects')}
             </NavListMobileItem>
             <NavListMobileItem
               className={`link ${
                 location.includes('/contact') ? 'active' : ''
               }`}
-              href={`/${lang}/contact`}
+              href={`/contact`}
               aria-label="Contact"
               onClick={toggleMenu}
             >
-              {'Contact'}
-              {/* {t('Contact')} */}
+              {t('Contact')}
             </NavListMobileItem>
           </NavListMobile>
           <ContactListMobile>
