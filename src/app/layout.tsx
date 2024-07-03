@@ -28,7 +28,6 @@ export default function RootLayout({
   const value = {
     language, setLanguage
   }
-    console.log("i18n.language", i18n.language)
   return (
 
      <Context.Provider value={value}>
@@ -39,7 +38,7 @@ export default function RootLayout({
             <StyledComponentRegistry>
               <HeaderComp lang={language} setLanguage={setLanguage}/>
               <main>
-                <Sidebar lang={language}/>
+                <Sidebar/>
                 <Providers>{children}</Providers>
               </main>
             </StyledComponentRegistry>

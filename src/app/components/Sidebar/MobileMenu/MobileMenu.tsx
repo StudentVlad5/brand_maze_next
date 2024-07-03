@@ -49,7 +49,6 @@ useEffect(()=>{
   }
 
 }, [isOpen])
- console.log("lang", lang)
   return (
     <>
       <HeaderSvgMobile width="24" height="24" onClick={toggleMenu} src={close} alt="close button"/>

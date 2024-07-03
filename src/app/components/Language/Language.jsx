@@ -1,27 +1,27 @@
-'use client'
+'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import i18next from 'i18next';
-import { SelectContainerLanguage, SelectLanguage } from './Language.styled';
+import { usePathname, useRouter } from 'next/navigation';
 
+import { SelectContainerLanguage, SelectLanguage } from './Language.styled';
 
 const Language = ({ language, setLanguage }) => {
 
-      useEffect(() => {
-          const saveLanguage = localStorage.getItem('chosenLanguage');
-          if (saveLanguage) {
-              i18next.changeLanguage(saveLanguage);
-              setLanguage(saveLanguage);
-          }
-      }, [setLanguage]);
+    useEffect(() => {
+        const saveLanguage = localStorage.getItem('chosenLanguage');
+        if (saveLanguage) {
+            i18next.changeLanguage(saveLanguage);
+            setLanguage(saveLanguage);
+        }
+    }, [setLanguage]);
 
-      const changeLanguage = (event) => {
-          const language = event;
-          i18next.changeLanguage(language);
-          localStorage.setItem('chosenLanguage', language);
-          setLanguage(language);
-      };
-
+    const changeLanguage = (event) => {
+        const language = event;
+        i18next.changeLanguage(language);
+        localStorage.setItem('chosenLanguage', language);
+        setLanguage(language);
+    };
     return (
         <SelectContainerLanguage>
             <label htmlFor="language-select"></label>

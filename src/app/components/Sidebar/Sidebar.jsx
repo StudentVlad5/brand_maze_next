@@ -21,7 +21,7 @@ import telegram from '@/images/header/telegram.svg';
 import linkedin from '@/images/header/linkedin.svg';
 import tiktok from '@/images/header/tiktok.svg';
 
-export const Sidebar = ({lang}) => {
+export const Sidebar = () => {
     const location = usePathname();
     return (
         <SidebarContainer>
@@ -37,7 +37,7 @@ export const Sidebar = ({lang}) => {
                     </NavListLink>
                     <NavListLink
                         className={`link ${location === '/about' ? 'active' : ''}`}
-                        href={`/${lang}/about`}
+                        href={`/about`}
                         aria-label="About"
                     >
                         {'About'}
@@ -47,7 +47,7 @@ export const Sidebar = ({lang}) => {
                         className={`link ${
                             location === '/services' ? 'active' : ''
                         }`}
-                        href={`/${lang}/services`}
+                        href={`/services`}
                         aria-label="Services"
                     >
                         {'Services'}
@@ -57,7 +57,7 @@ export const Sidebar = ({lang}) => {
                         className={`link ${
                             location === '/projects' ? 'active' : ''
                         }`}
-                        href={`/${lang}/projects`}
+                        href={`/projects`}
                         aria-label="Projects"
                     >
                         {'Projects'}
@@ -67,7 +67,7 @@ export const Sidebar = ({lang}) => {
                         className={`link ${
                             location === '/contact' ? 'active' : ''
                         }`}
-                        href={`/${lang}/contact`}
+                        href={`/contact`}
                         aria-label="Contact"
                     >
                         {'Contact'}
