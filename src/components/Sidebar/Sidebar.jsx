@@ -17,14 +17,14 @@ import { usePathname } from 'next/navigation';
 import { ThemeContext } from '../ThemeStatus/ThemeProvider';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
-import instagram from '@/images/header/instagram.svg';
-import telegram from '@/images/header/telegram.svg';
-import linkedin from '@/images/header/linkedin.svg';
-import tiktok from '@/images/header/tiktok.svg';
-import instagramDark from '@/images/header/instagram-dark.svg';
-import telegramDark from '@/images/header/telegram-dark.svg';
-import linkedinDark from '@/images/header/linkedin-dark.svg';
-import tiktokDark from '@/images/header/tiktok-dark.svg';
+import instagram from '../../../public/images/header/instagram.svg';
+import telegram from '../../../public/images/header/telegram.svg';
+import linkedin from '../../../public/images/header/linkedin.svg';
+import tiktok from '../../../public/images/header/tiktok.svg';
+import instagramDark from '../../../public/images/header/instagram-dark.svg';
+import telegramDark from '../../../public/images/header/telegram-dark.svg';
+import linkedinDark from '../../../public/images/header/linkedin-dark.svg';
+import tiktokDark from '../../../public/images/header/tiktok-dark.svg';
 
 export const Sidebar = () => {
     const location = usePathname();

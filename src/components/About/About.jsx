@@ -1,4 +1,9 @@
-'use client'
+'use client';
+import { useEffect, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ThemeContext } from '../ThemeStatus/ThemeProvider';
+import Image from 'next/image';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import 'swiper/css/navigation';
@@ -7,1221 +12,489 @@ import 'swiper/css';
 
 import { Container, Title } from '@/components/baseStyles/CommonStyle.styled';
 import {
-  ContainerForAbout,
-  ContainerForIcon,
-  Img,
-  ItemImgText,
-  PaddingItem,
-  ContainerForTeam,
-  ItemWrap,
-  TitleItem,
-  JobItem,
-  SocialsList,
-  SocialsListItem,
-  ContainerForAboutForMobile,
-  ContainerForIconTablet,
-  ImgForTeam,
-  ContainerForTeamForMobile,
-  ContainerForTeamForTablet,
-  TitleTeam,
-  ContainerForIconText,
-  ContainerForAboutItem,
-  ImgForTeamColor,
-  ImgWrap,
-  SocialsListLink,
+    ContainerForAbout,
+    ContainerForIcon,
+    Img,
+    ItemImgText,
+    PaddingItem,
+    ContainerForTeam,
+    ItemWrap,
+    TitleItem,
+    JobItem,
+    SocialsList,
+    SocialsListItem,
+    ContainerForAboutForMobile,
+    ContainerForIconTablet,
+    ImgForTeam,
+    ContainerForTeamForMobile,
+    ContainerForTeamForTablet,
+    TitleTeam,
+    ContainerForAboutItem,
+    ImgForTeamColor,
+    ImgWrap,
+    SocialsListLink,
+    TextBenefit,
 } from './About.styled';
 
-import chartbar from '@/images/about/mdi_light_chart-bar.svg';
-import chartpie from '@/images/about/mdi_light_chart-pie.svg';
-import flask from '@/images/about/mdi_light_flask.svg';
-import gift from '@/images/about/mdi_light_gift.svg';
+import chartbar from '../../../public/images/about/mdi_light_chart-bar.svg';
+import chartpie from '../../../public/images/about/mdi_light_chart-pie.svg';
+import flask from '../../../public/images/about/mdi_light_flask.svg';
+import gift from '../../../public/images/about/mdi_light_gift.svg';
 
-import heorhii from '@/images/about/team/heorhii_blackAndWhite.webp';
-import heorhiiColor from '@/images/about/team/heorhii.webp';
-import julia from '@/images/about/team/julia_blackAndWhite.webp';
-import juliaColor from '@/images/about/team/julia.webp';
-import vlad from '@/images/about/team/vlad_blackAndWhite.webp';
-import vladColor from '@/images/about/team/vlad_warm_color.webp';
+import envelop from '../../../public/images/about/envelop.svg';
+import telegram from '../../../public/images/header/telegram.svg';
+import linkedin from '../../../public/images/header/linkedin.svg';
+import github from '../../../public/images/about/github.svg';
 
-import envelop from '@/images/about/envelop.svg';
-import telegram from '@/images/header/telegram.svg';
-import linkedin from '@/images/header/linkedin.svg';
-import github from '@/images/about/github.svg';
+import envelopDark from '../../../public/images/about/envelop-dark.svg';
+import telegramDark from '../../../public/images/header/telegram-dark.svg';
+import linkedinDark from '../../../public/images/header/linkedin-dark.svg';
+import githubDark from '../../../public/images/about/github-dark.svg';
 
-import envelopDark from '@/images/about/envelop-dark.svg';
-import telegramDark from '@/images/header/telegram-dark.svg';
-import linkedinDark from '@/images/header/linkedin-dark.svg';
-import githubDark from '@/images/about/github-dark.svg';
-
-import { useEffect, useContext } from 'react';
-import { useTranslation } from 'react-i18next';
-import { ThemeContext } from '../ThemeStatus/ThemeProvider';
-import Image from 'next/image';
+import about from '@/CONST/about.json';
 
 export const About = () => {
-  const { t } = useTranslation();
-  const { theme } = useContext(ThemeContext);
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }, []);
+    const { t } = useTranslation();
+    const { theme } = useContext(ThemeContext);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
+    }, []);
 
-  return (
-      <Container>
-          <Title>{t('About')}</Title>
-          <ContainerForAbout>
-              <ContainerForAboutItem>
-                  <p>
-                      {t(
-                          'Our approach to project delivery is a holistic approach that includes strategic planning, creative design, rapid website development and an emphasis on building lasting relationships with clients. We work tirelessly to ensure the success and growth of our clients.',
-                      )}
-                  </p>
-                  <p>
-                      {t(
-                          'At Brand Maze, we pride ourselves on our ability to create exceptional brands that capture attention, demonstrate quality and leave a lasting impression. Our team of talented professionals work together, combining strategy, creativity and technology to achieve the best results for our clients.',
-                      )}
-                  </p>
-              </ContainerForAboutItem>
-              <ContainerForIconText>
-                  {t(
-                      'Join us at Brand Maze and let us be your trusted partner in developing your brand. Together we can create the magic that will make your brand stand out and attract more success.',
-                  )}
-              </ContainerForIconText>
-          </ContainerForAbout>
-          <ContainerForAboutForMobile>
-              <Swiper
-                  modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                  spaceBetween={50}
-                  slidesPerView={1}
-                  navigation
-                  pagination={{ clickable: true }}
-                  mousewheel={true}
-                  keyboard={true}
-                  loop={true}
-                  loopPreventsSliding={true}
-                  loopedslides={1}
-              >
-                  <SwiperSlide>
-                      <p style={{ width: '80%', marginBottom: '20px' }}>
-                          {t(
-                              'Our approach to project delivery is a holistic approach that includes strategic planning, creative design, rapid website development and an emphasis on building lasting relationships with clients. We work tirelessly to ensure the success and growth of our clients.',
-                          )}
-                      </p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      <p style={{ width: '80%', marginBottom: '20px' }}>
-                          {t(
-                              'At Brand Maze, we pride ourselves on our ability to create exceptional brands that capture attention, demonstrate quality and leave a lasting impression. Our team of talented professionals work together, combining strategy, creativity and technology to achieve the best results for our clients.',
-                          )}
-                      </p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      <p style={{ width: '80%', marginBottom: '20px' }}>
-                          {t(
-                              'Join us at Brand Maze and let us be your trusted partner in developing your brand. Together we can create the magic that will make your brand stand out and attract more success.',
-                          )}
-                      </p>
-                  </SwiperSlide>
-              </Swiper>
-          </ContainerForAboutForMobile>
-          <ContainerForIcon>
-              <ContainerForIconTablet className="containerJustifyEnd">
-                  <ItemImgText>
-                      <Img src={gift} alt="gift" />
-                      <PaddingItem>{t('Experienced team')}</PaddingItem>
-                  </ItemImgText>
-                  <ItemImgText>
-                      <Img src={chartpie} alt="chartpie" />
-                      <PaddingItem>{t('Business Strategy')}</PaddingItem>
-                  </ItemImgText>
-              </ContainerForIconTablet>
-              <ContainerForIconTablet className="containerJustifyStart">
-                  <ItemImgText>
-                      <Img src={chartbar} alt="chartbar" />
-                      <PaddingItem>{t('Amazing Growth')}</PaddingItem>
-                  </ItemImgText>
-                  <ItemImgText>
-                      <Img src={flask} alt="flask" />
-                      <PaddingItem>{t('Technical Supervision')}</PaddingItem>
-                  </ItemImgText>
-              </ContainerForIconTablet>
-          </ContainerForIcon>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <TitleTeam>{t('OUR PROFESSIONAL TEAM')}</TitleTeam>
-          </div>
-          <ContainerForTeam>
-              <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                  <ImgWrap>
-                      <ImgForTeam src={vlad} alt="vlad" />
-                      <ImgForTeamColor src={vladColor} alt="vlad" />
-                  </ImgWrap>
-                  <TitleItem>{t('Vlad Popov')}</TitleItem>
-                  <JobItem>{t('Full-Stack Developer')}</JobItem>
-                  <SocialsList>
-                      <SocialsListItem>
-                          <SocialsListLink
-                              href="https://github.com/StudentVlad5"
-                              target="_blank"
-                              rel="noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={github}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={githubDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </SocialsListLink>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <SocialsListLink
-                              href="https://www.linkedin.com/in/vladyslav-popov-a491232a/"
-                              target="_blank"
-                              rel="noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={linkedin}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={linkedinDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </SocialsListLink>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <SocialsListLink
-                              href="https://t.me/Vinforam"
-                              target="_blank"
-                              rel="noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={telegram}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={telegramDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </SocialsListLink>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <SocialsListLink href="mailto:vlad_np@ukr.net">
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={envelop}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={envelopDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </SocialsListLink>
-                      </SocialsListItem>
-                  </SocialsList>
-              </ItemWrap>
-              <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                  <ImgWrap>
-                      <ImgForTeam src={julia} alt="julia" />
-                      <ImgForTeamColor src={juliaColor} alt="julia" />
-                  </ImgWrap>
-                  <TitleItem>{t('Julia Golban')}</TitleItem>
-                  <JobItem>{t('Full-Stack Engineer')}</JobItem>
-                  <SocialsList>
-                      <SocialsListItem>
-                          <a
-                              href="https://github.com/JuliaGolban"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={github}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={githubDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <a
-                              href="https://www.linkedin.com/in/julia-golban/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={linkedin}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={linkedinDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <a
-                              href="https://www.t.me/JuliaGolban"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={telegram}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={telegramDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <a href="mailto:julia.j.shcherban@gmail.com">
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={envelop}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={envelopDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                  </SocialsList>
-              </ItemWrap>
-              <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                  <ImgWrap>
-                      <ImgForTeam src={heorhii} alt="heorhii" />
-                      <ImgForTeamColor src={heorhiiColor} alt="heorhii" />
-                  </ImgWrap>
-                  <TitleItem>{t('Heorhii Rushchak')}</TitleItem>
-                  <JobItem>{t('Full-Stack Developer')}</JobItem>
-                  <SocialsList>
-                      <SocialsListItem>
-                          <a
-                              href="https://github.com/Heorgii"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={github}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={githubDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <a
-                              href="https://www.linkedin.com/in/heorgii-rushchak-19884a245"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={linkedin}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={linkedinDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <a
-                              href="https://t.me/heorhi1"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                          >
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={telegram}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={telegramDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                      <SocialsListItem>
-                          <a href="mailto:rushchakheorgii@gmail.com">
-                              {theme === 'light' ? (
-                                  <Image
-                                      src={envelop}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              ) : (
-                                  <Image
-                                      src={envelopDark}
-                                      width="20"
-                                      height="20"
-                                      alt="github link"
-                                  />
-                              )}
-                          </a>
-                      </SocialsListItem>
-                  </SocialsList>
-              </ItemWrap>
-          </ContainerForTeam>
-          <ContainerForTeamForMobile>
-              <Swiper
-                  modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                  spaceBetween={50}
-                  slidesPerView={1}
-                  navigation
-                  pagination={{ clickable: true }}
-                  mousewheel={true}
-                  keyboard={true}
-                  loop={true}
-                  loopPreventsSliding={true}
-                  loopedSlides={1}
-              >
-                  <SwiperSlide>
-                      {/* <ItemWrap>
-                          <ImgWrap>
-                              <ImgForTeam src={vlad} alt="vlad" />
-                              <ImgForTeamColor src={vladColor} alt="vlad" />
-                          </ImgWrap>
-                          <TitleItem>{t('Vlad Popov')}</TitleItem>
-                          <JobItem>{t('Full-Stack Developer')}</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://github.com/StudentVlad5"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      <svg width="20" height="20">
-                                          <use href={sprite + '#github'}></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://www.linkedin.com/in/vladyslav-popov-a491232a/"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      <svg width="20" height="20">
-                                          <use
-                                              href={sprite + '#linkedin'}
-                                          ></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://t.me/Vinforam"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      <svg width="20" height="20">
-                                          <use
-                                              href={sprite + '#telegram'}
-                                          ></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink href="mailto:vlad_np@ukr.net">
-                                      <svg width="20" height="20">
-                                          <use href={sprite + '#envelop'}></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap> */}
-                      <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                          <ImgWrap>
-                              <ImgForTeam src={vlad} alt="vlad" />
-                              <ImgForTeamColor src={vladColor} alt="vlad" />
-                          </ImgWrap>
-                          <TitleItem>{t('Vlad Popov')}</TitleItem>
-                          <JobItem>{t('Full-Stack Developer')}</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://github.com/StudentVlad5"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={github}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={githubDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://www.linkedin.com/in/vladyslav-popov-a491232a/"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={linkedin}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={linkedinDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://t.me/Vinforam"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={telegram}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={telegramDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink href="mailto:vlad_np@ukr.net">
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={envelop}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={envelopDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      {/* <ItemWrap>
-                          <ImgWrap>
-                              <ImgForTeam src={julia} alt="julia" />
-                              <ImgForTeamColor src={juliaColor} alt="julia" />
-                          </ImgWrap>
-                          <TitleItem>Julia Golban</TitleItem>
-                          <JobItem>Full-Stack Engineer</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://github.com/JuliaGolban"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      <svg width="20" height="20">
-                                          <use href={sprite + '#github'}></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://www.linkedin.com/in/julia-golban/"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      <svg width="20" height="20">
-                                          <use
-                                              href={sprite + '#linkedin'}
-                                          ></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://www.t.me/JuliaGolban"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      <svg width="20" height="20">
-                                          <use
-                                              href={sprite + '#telegram'}
-                                          ></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink href="mailto:julia.j.shcherban@gmail.com">
-                                      <svg width="20" height="20">
-                                          <use href={sprite + '#envelop'}></use>
-                                      </svg>
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap> */}
-                      <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                          <ImgWrap>
-                              <ImgForTeam src={julia} alt="julia" />
-                              <ImgForTeamColor src={juliaColor} alt="julia" />
-                          </ImgWrap>
-                          <TitleItem>{t('Julia Golban')}</TitleItem>
-                          <JobItem>{t('Full-Stack Engineer')}</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://github.com/JuliaGolban"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={github}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={githubDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://www.linkedin.com/in/julia-golban/"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={linkedin}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={linkedinDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://www.t.me/JuliaGolban"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={telegram}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={telegramDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a href="mailto:julia.j.shcherban@gmail.com">
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={envelop}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={envelopDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      {/* <ItemWrap>
-                          <ImgWrap>
-                              <ImgForTeam src={heorhii} alt="heorhii" />
-                              <ImgForTeamColor
-                                  src={heorhiiColor}
-                                  alt="heorhii"
-                              />
-                          </ImgWrap>
-                          <TitleItem>Heorhii Rushchak</TitleItem>
-                          <JobItem>Full-Stack Developer</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <svg width="20" height="20">
-                                      <use href={sprite + '#github'}></use>
-                                  </svg>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <svg width="20" height="20">
-                                      <use href={sprite + '#linkedin'}></use>
-                                  </svg>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <svg width="20" height="20">
-                                      <use href={sprite + '#telegram'}></use>
-                                  </svg>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <svg width="20" height="20">
-                                      <use href={sprite + '#envelop'}></use>
-                                  </svg>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap> */}
-                      <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                          <ImgWrap>
-                              <ImgForTeam src={heorhii} alt="heorhii" />
-                              <ImgForTeamColor
-                                  src={heorhiiColor}
-                                  alt="heorhii"
-                              />
-                          </ImgWrap>
-                          <TitleItem>{t('Heorhii Rushchak')}</TitleItem>
-                          <JobItem>{t('Full-Stack Developer')}</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://github.com/Heorgii"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={github}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={githubDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://www.linkedin.com/in/heorgii-rushchak-19884a245"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={linkedin}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={linkedinDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://t.me/heorhi1"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={telegram}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={telegramDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a href="mailto:rushchakheorgii@gmail.com">
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={envelop}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={envelopDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap>
-                  </SwiperSlide>
-              </Swiper>
-          </ContainerForTeamForMobile>
-          <ContainerForTeamForTablet>
-              <Swiper
-                  modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                  spaceBetween={50}
-                  slidesPerView={2}
-                  navigation
-                  pagination={{ clickable: true }}
-                  mousewheel={true}
-                  keyboard={true}
-              >
-                  <SwiperSlide>
-                      <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                          <ImgWrap>
-                              <ImgForTeam src={vlad} alt="vlad" />
-                              <ImgForTeamColor src={vladColor} alt="vlad" />
-                          </ImgWrap>
-                          <TitleItem>{t('Vlad Popov')}</TitleItem>
-                          <JobItem>{t('Full-Stack Developer')}</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://github.com/StudentVlad5"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={github}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={githubDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://www.linkedin.com/in/vladyslav-popov-a491232a/"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={linkedin}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={linkedinDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink
-                                      href="https://t.me/Vinforam"
-                                      target="_blank"
-                                      rel="noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={telegram}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={telegramDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <SocialsListLink href="mailto:vlad_np@ukr.net">
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={envelop}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={envelopDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </SocialsListLink>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                          <ImgWrap>
-                              <ImgForTeam src={julia} alt="julia" />
-                              <ImgForTeamColor src={juliaColor} alt="julia" />
-                          </ImgWrap>
-                          <TitleItem>{t('Julia Golban')}</TitleItem>
-                          <JobItem>{t('Full-Stack Engineer')}</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://github.com/JuliaGolban"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={github}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={githubDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://www.linkedin.com/in/julia-golban/"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={linkedin}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={linkedinDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://www.t.me/JuliaGolban"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={telegram}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={telegramDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a href="mailto:julia.j.shcherban@gmail.com">
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={envelop}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={envelopDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                      <ItemWrap data-aos="flip-up" data-aos-delay="150">
-                          <ImgWrap>
-                              <ImgForTeam src={heorhii} alt="heorhii" />
-                              <ImgForTeamColor
-                                  src={heorhiiColor}
-                                  alt="heorhii"
-                              />
-                          </ImgWrap>
-                          <TitleItem>{t('Heorhii Rushchak')}</TitleItem>
-                          <JobItem>{t('Full-Stack Developer')}</JobItem>
-                          <SocialsList>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://github.com/Heorgii"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={github}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={githubDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://www.linkedin.com/in/heorgii-rushchak-19884a245"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={linkedin}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={linkedinDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a
-                                      href="https://t.me/heorhi1"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                  >
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={telegram}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={telegramDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                              <SocialsListItem>
-                                  <a href="mailto:rushchakheorgii@gmail.com">
-                                      {theme === 'light' ? (
-                                          <Image
-                                              src={envelop}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      ) : (
-                                          <Image
-                                              src={envelopDark}
-                                              width="20"
-                                              height="20"
-                                              alt="github link"
-                                          />
-                                      )}
-                                  </a>
-                              </SocialsListItem>
-                          </SocialsList>
-                      </ItemWrap>
-                  </SwiperSlide>
-              </Swiper>
-          </ContainerForTeamForTablet>
-      </Container>
-  );
+    return (
+        <Container>
+            <Title>{t('About')}</Title>
+            <ContainerForAbout>
+                <ContainerForAboutItem>
+                    {about?.benefits.map((it, ind) => (
+                        <TextBenefit key={ind}>{t(it)}</TextBenefit>
+                    ))}
+                </ContainerForAboutItem>
+            </ContainerForAbout>
+            <ContainerForAboutForMobile>
+                <Swiper
+                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true }}
+                    mousewheel={true}
+                    keyboard={true}
+                    loop={true}
+                    loopPreventsSliding={true}
+                    loopedslides={1}
+                >
+                    {about?.benefits.map((it, ind) => (
+                        <SwiperSlide key={ind}>
+                            <TextBenefit
+                                style={{ padding: '20px', width: '70%' }}
+                            >
+                                {t(it)}
+                            </TextBenefit>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </ContainerForAboutForMobile>
+            <ContainerForIcon>
+                <ContainerForIconTablet className="containerJustifyEnd">
+                    {about?.['icon-row-1'].map((it) => (
+                        <ItemImgText key={it.name}>
+                            <Img
+                                src={it.url}
+                                alt={it.name}
+                                width="45"
+                                height="45"
+                            />
+                            <PaddingItem>{t(it.moto)}</PaddingItem>
+                        </ItemImgText>
+                    ))}
+                </ContainerForIconTablet>
+                <ContainerForIconTablet className="containerJustifyStart">
+                    {about?.['icon-row-2'].map((it) => (
+                        <ItemImgText key={it.name}>
+                            <Img
+                                src={it.url}
+                                alt={it.name}
+                                width="45"
+                                height="45"
+                            />
+                            <PaddingItem>{t(it.moto)}</PaddingItem>
+                        </ItemImgText>
+                    ))}
+                </ContainerForIconTablet>
+            </ContainerForIcon>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <TitleTeam>{t('OUR PROFESSIONAL TEAM')}</TitleTeam>
+            </div>
+            <ContainerForTeam>
+                {about?.team.map((it) => (
+                    <ItemWrap
+                        key={it.id}
+                        data-aos="flip-up"
+                        data-aos-delay="150"
+                    >
+                        <ImgWrap>
+                            <ImgForTeam
+                                src={it.img_bw}
+                                alt={it.name}
+                                layout="fill"
+                            />
+                            <ImgForTeamColor
+                                src={it.img_color}
+                                alt={it.name}
+                                layout="fill"
+                            />
+                        </ImgWrap>
+                        <TitleItem>{t(it.name)}</TitleItem>
+                        <JobItem>{t(it.position)}</JobItem>
+                        <SocialsList>
+                            <SocialsListItem>
+                                <SocialsListLink
+                                    href={it.url_git}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {theme === 'light' ? (
+                                        <Image
+                                            src={github}
+                                            width="20"
+                                            height="20"
+                                            alt="github link"
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={githubDark}
+                                            width="20"
+                                            height="20"
+                                            alt="github link"
+                                        />
+                                    )}
+                                </SocialsListLink>
+                            </SocialsListItem>
+                            <SocialsListItem>
+                                <SocialsListLink
+                                    href={it.url_linkidn}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {theme === 'light' ? (
+                                        <Image
+                                            src={linkedin}
+                                            width="20"
+                                            height="20"
+                                            alt="linkedin link"
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={linkedinDark}
+                                            width="20"
+                                            height="20"
+                                            alt="linkedin link"
+                                        />
+                                    )}
+                                </SocialsListLink>
+                            </SocialsListItem>
+                            <SocialsListItem>
+                                <SocialsListLink
+                                    href={it.url_telegram}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {theme === 'light' ? (
+                                        <Image
+                                            src={telegram}
+                                            width="20"
+                                            height="20"
+                                            alt="telegram link"
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={telegramDark}
+                                            width="20"
+                                            height="20"
+                                            alt="telegram link"
+                                        />
+                                    )}
+                                </SocialsListLink>
+                            </SocialsListItem>
+                            <SocialsListItem>
+                                <SocialsListLink href={it.url_mail}>
+                                    {theme === 'light' ? (
+                                        <Image
+                                            src={envelop}
+                                            width="20"
+                                            height="20"
+                                            alt="mail link"
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={envelopDark}
+                                            width="20"
+                                            height="20"
+                                            alt="mail link"
+                                        />
+                                    )}
+                                </SocialsListLink>
+                            </SocialsListItem>
+                        </SocialsList>
+                    </ItemWrap>
+                ))}
+            </ContainerForTeam>
+            <ContainerForTeamForMobile>
+                <Swiper
+                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true }}
+                    mousewheel={true}
+                    keyboard={true}
+                    loop={true}
+                    loopPreventsSliding={true}
+                    loopedslides={1}
+                >
+                    {about?.team.map((it) => (
+                        <SwiperSlide key={it.id}>
+                            <ItemWrap data-aos="flip-up" data-aos-delay="150">
+                                <ImgWrap>
+                                    <ImgForTeam
+                                        src={it.img_bw}
+                                        alt={it.name}
+                                        layout="fill"
+                                        priority
+                                    />
+                                    <ImgForTeamColor
+                                        src={it.img_color}
+                                        alt={it.name}
+                                        layout="fill"
+                                        priority
+                                    />
+                                </ImgWrap>
+                                <TitleItem>{t(it.name)}</TitleItem>
+                                <JobItem>{t(it.position)}</JobItem>
+                                <SocialsList>
+                                    <SocialsListItem>
+                                        <SocialsListLink
+                                            href={it.url_git}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={github}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="github link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={githubDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="github link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                    <SocialsListItem>
+                                        <SocialsListLink
+                                            href={it.url_linkidn}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={linkedin}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="linkedin link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={linkedinDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="linkedin link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                    <SocialsListItem>
+                                        <SocialsListLink
+                                            href={it.url_telegram}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={telegram}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="telegram link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={telegramDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="telegram link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                    <SocialsListItem>
+                                        <SocialsListLink href={it.url_mail}>
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={envelop}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="mail link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={envelopDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="mail link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                </SocialsList>
+                            </ItemWrap>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </ContainerForTeamForMobile>
+            <ContainerForTeamForTablet>
+                <Swiper
+                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                    spaceBetween={50}
+                    slidesPerView={2}
+                    navigation
+                    pagination={{ clickable: true }}
+                    mousewheel={true}
+                    keyboard={true}
+                    loop={true}
+                    loopPreventsSliding={true}
+                    loopedslides={1}
+                >
+                    {about?.team.map((it) => (
+                        <SwiperSlide key={it.id}>
+                            <ItemWrap data-aos="flip-up" data-aos-delay="150">
+                                <ImgWrap>
+                                    <ImgForTeam
+                                        src={it.img_bw}
+                                        alt={it.name}
+                                        layout="fill"
+                                    />
+                                    <ImgForTeamColor
+                                        src={it.img_color}
+                                        alt={it.name}
+                                        layout="fill"
+                                    />
+                                </ImgWrap>
+                                <TitleItem>{t(it.name)}</TitleItem>
+                                <JobItem>{t(it.position)}</JobItem>
+                                <SocialsList>
+                                    <SocialsListItem>
+                                        <SocialsListLink
+                                            href={it.url_git}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={github}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="github link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={githubDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="github link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                    <SocialsListItem>
+                                        <SocialsListLink
+                                            href={it.url_linkidn}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={linkedin}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="linkedin link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={linkedinDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="linkedin link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                    <SocialsListItem>
+                                        <SocialsListLink
+                                            href={it.url_telegram}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={telegram}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="telegram link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={telegramDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="telegram link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                    <SocialsListItem>
+                                        <SocialsListLink href={it.url_mail}>
+                                            {theme === 'light' ? (
+                                                <Image
+                                                    src={envelop}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="mail link"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={envelopDark}
+                                                    width="20"
+                                                    height="20"
+                                                    alt="mail link"
+                                                />
+                                            )}
+                                        </SocialsListLink>
+                                    </SocialsListItem>
+                                </SocialsList>
+                            </ItemWrap>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </ContainerForTeamForTablet>
+        </Container>
+    );
 };

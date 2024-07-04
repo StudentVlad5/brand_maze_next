@@ -22,6 +22,16 @@ const fadeInRightAnimation = keyframes`
     opacity: 1;
   }
 `;
+const fadeInCenterAnimation = keyframes`
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
 
 const fadeInBottomAnimation = keyframes`
   0% {
@@ -145,6 +155,7 @@ const ContainerForTeam = styled.div`
   line-height: 1.5;
   width: 100%;
   overflow: hidden;
+  gap: 15px;
   @media screen and (min-width: 1000px) {
     display: flex;
   }
@@ -159,12 +170,12 @@ const ContainerForTeam = styled.div`
 `;
 const ContainerForAboutItem = styled.div`
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: nowrap;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   width: 100%;
   margin-bottom: 40px;
 
@@ -179,6 +190,10 @@ const ContainerForAboutItem = styled.div`
   }
 
   & > * {
+    &:nth-child(3) {
+      animation: ${fadeInCenterAnimation} 0.5s ease-in both;
+    }
+
     &:nth-child(2) {
       animation: ${fadeInRightAnimation} 0.5s ease-in both;
     }
@@ -188,6 +203,11 @@ const ContainerForAboutItem = styled.div`
     }
   }
 `;
+const TextBenefit = styled.p`
+width: calc(100%/2 - 60px);
+text-align: justify;
+`;
+
 const ContainerForIcon = styled.div`
   display: flex;
   position: relative;
@@ -219,11 +239,7 @@ const ContainerForIcon = styled.div`
     }
   }
 `;
-const ContainerForIconText = styled.div`
-  animation: ${fadeInBottomAnimation} 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
-  margin-bottom: 40px;
-  color: ${props => props.theme.text};
-`;
+
 const ContainerForIconTablet = styled.div`
   display: flex;
   position: relative;
@@ -255,7 +271,7 @@ const Img = styled(Image)`
 `;
 
 const ImgForTeam = styled(Image)`
-  width: 100%;
+  width: 175px;
   height: 250px;
   @media screen and (min-width: 490px) {
     width: 250px;
@@ -271,7 +287,7 @@ const ImgForTeamColor = styled(Image)`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
+  width: 175px;
   height: 250px;
   @media screen and (min-width: 490px) {
     width: 250px;
@@ -311,6 +327,7 @@ const ItemWrap = styled.div`
 const ImgWrap = styled.div`
   display: block;
   position: relative;
+  border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
   width: 200px;
@@ -320,8 +337,8 @@ const ImgWrap = styled.div`
     height: 357px;
   }
   &:hover ${ImgForTeamColor} {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 `;
@@ -329,7 +346,7 @@ const ImgWrap = styled.div`
 const TitleItem = styled.h4`
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 4%;
   font-weight: 700;
   text-transform: uppercase;
@@ -339,7 +356,7 @@ const TitleItem = styled.h4`
   margin-bottom: 4px;
 
   @media screen and (min-width: 768px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 
@@ -392,7 +409,6 @@ const SocialsListLink = styled.a`
 export {
   ContainerForAbout,
   ContainerForIcon,
-  ContainerForIconText,
   Img,
   ItemImgText,
   PaddingItem,
@@ -412,4 +428,5 @@ export {
   ImgForTeamColor,
   ImgWrap,
   SocialsListLink,
+  TextBenefit
 };

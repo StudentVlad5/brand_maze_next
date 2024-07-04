@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   main {
-    width: 100%;
+    width: 90%;
     min-height: calc(100vh - 50px);
     display: flex;
 
@@ -210,12 +210,15 @@ img {
     transform: translateX(-50%);
   }
 
-  .swiper-button-next::after {
+  .swiper-button-next::after, .swiper-button-prev::after {
   color: ${(props) => props.theme.accentGrey};
-}
-
-.swiper-button-prev::after {
-  color: ${(props) => props.theme.accentGrey};
+  transform: scale(0.6);
+    @media screen and (min-width: 768px) {
+  transform: scale(0.8);
+  }
+  @media screen and (min-width: 1280px) {
+  transform: scale(1);
+  }
 }
 
 .swiper-pagination-bullet-active.swiper-pagination-bullet{

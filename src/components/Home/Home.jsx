@@ -16,7 +16,6 @@ import {
     SwiperSvg,
     ListItemImg,
 } from './Home.styled';
-import logo2 from '@/images/home/logo2.svg';
 import { Container } from '@/components/baseStyles/CommonStyle.styled';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
@@ -25,7 +24,8 @@ import 'swiper/css';
 import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper/modules';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import ph from '@/images/home/ph.png';
+import logo2 from '../../../public/images/home/logo2.svg';
+import ph from '../../../public/images/home/ph.png';
 
 export const Home = () => {
     const { t } = useTranslation();

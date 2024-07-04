@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useContext, useEffect, useState } from 'react';
-import menu from '@/images/header/menu.svg';
-import menuDark from '@/images/header/menu-dark.svg';
+import menu from '../../../public/images/header/menu.svg';
+import menuDark from '../../../public/images/header/menu-dark.svg';
 
 import { SwitchTheme } from '../ThemeStatus/SwitcherTheme/SwitchTheme';
 import { Header, HeaderSvg, Logo, LogoBox, MovieIcon } from './Header.styled';

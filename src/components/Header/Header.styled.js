@@ -1,5 +1,5 @@
 import { keyframes, styled } from "styled-components";
-import mdPlayCircleOutline from "@/images/header/circle_play_icon.svg";
+import mdPlayCircleOutline from "../../../public/images/header/circle_play_icon.svg";
 
 const fadeInTopAnimation = keyframes`
   0% {

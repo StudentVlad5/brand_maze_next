@@ -1,0 +1,66 @@
+{
+    "benefits": [
+        "Our approach to project delivery is a holistic approach that includes strategic planning, creative design, rapid website development and an emphasis on building lasting relationships with clients. We work tirelessly to ensure the success and growth of our clients.",
+        "At Brand Maze, we pride ourselves on our ability to create exceptional brands that capture attention, demonstrate quality and leave a lasting impression. Our team of talented professionals work together, combining strategy, creativity and technology to achieve the best results for our clients.",
+        "Join us at Brand Maze and let us be your trusted partner in developing your brand. Together we can create the magic that will make your brand stand out and attract more success."
+    ],
+    "team": [
+        {
+            "id": 1,
+            "name": "Vlad Popov",
+            "position": "Full-Stack Developer",
+            "img_bw": "/images/about/team/vlad_blackAndWhite.webp",
+            "img_color": "/images/about/team/vlad_warm_color.webp",
+            "url_git": "https://github.com/StudentVlad5",
+            "url_linkidn": "https://www.linkedin.com/in/vladyslav-popov-a491232a/",
+            "url_telegram": "https://t.me/Vinforam",
+            "url_mail": "mailto:vlad_np@ukr.net"
+        },
+        {
+            "id": 2,
+            "name": "Julia Golban",
+            "position": "Full-Stack Engineer",
+            "img_bw": "/images/about/team/julia_blackAndWhite.webp",
+            "img_color": "/images/about/team/julia.webp",
+            "url_git": "https://github.com/JuliaGolban",
+            "url_linkidn": "https://www.linkedin.com/in/julia-golban/",
+            "url_telegram": "https://www.t.me/JuliaGolban",
+            "url_mail": "mailto:julia.j.shcherban@gmail.com"
+        },
+        {
+            "id": 3,
+            "name": "Heorhii Rushchak",
+            "position": "Full-Stack Developer",
+            "img_bw": "/images/about/team/heorhii_blackAndWhite.webp",
+            "img_color": "/images/about/team/heorhii.webp",
+            "url_git": "https://github.com/Heorgii",
+            "url_linkidn": "https://www.linkedin.com/in/heorgii-rushchak-19884a245",
+            "url_telegram": "https://t.me/heorhi1",
+            "url_mail": "mailto:rushchakheorgii@gmail.com"
+        }
+    ],
+    "icon-row-1": [
+        {
+            "name": "gift",
+            "url": "/images/about/mdi_light_gift.svg",
+            "moto": "Experienced team"
+        },
+        {
+            "name": "chartpie",
+            "url": "/images/about/mdi_light_chart-pie.svg",
+            "moto": "Business Strategy"
+        }
+    ],
+    "icon-row-2": [
+        {
+            "name": "chartbar",
+            "url": "/images/about/mdi_light_chart-bar.svg",
+            "moto": "Amazing Growth"
+        },
+        {
+            "name": "flask",
+            "url": "/images/about/mdi_light_flask.svg",
+            "moto": "Technical Supervision"
+        }
+    ]
+}
