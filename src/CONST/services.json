@@ -1,0 +1,147 @@
+{
+    "listSkils": [
+        {
+            "id": "file",
+            "name": "Web design",
+            "level": "90",
+            "max": "100",
+            "value": "90"
+        },
+        {
+            "id": "development",
+            "name": "Web development",
+            "level": "95",
+            "max": "100",
+            "value": "95"
+        },
+        {
+            "id": "logo",
+            "name": "Logo design",
+            "level": "93",
+            "max": "100",
+            "value": "93"
+        },
+        {
+            "id": "instagram",
+            "name": "Instagram",
+            "level": "95",
+            "max": "100",
+            "value": "95"
+        },
+        {
+            "id": "tiktok",
+            "name": "TikTok",
+            "level": "95",
+            "max": "100",
+            "value": "95"
+        }
+    ],
+    "sliderList": [
+        {
+            "number": "01",
+            "heading": "The importance of the first meeting",
+            "text": "During our first meeting, we will have an introductory conversation where we will learn about your goals, objectives and expectations. We'll also find out what role your website should play. This information will be extremely useful for us as it will help us to develop a detailed plan of work in the future.",
+            "details": [
+                "Discussion of the client questionnaire",
+                "Definition of the topic and the main goal of the project"
+            ]
+        },
+        {
+            "number": "02",
+            "heading": "Create Layouts",
+            "text": "At this stage, the main role is played by the designer, who carefully examines the technical task and reproduces his artistic vision of the project. His creativity allows you to create the interface of your website to be the best in the world.",
+            "details": [
+                "Development and approval of a technical task",
+                "Prototyping, layout and design",
+                "Layout correction and approval"
+            ]
+        },
+        {
+            "number": "03",
+            "heading": "The programmer gives life to the design",
+            "text": "The role of the programmer is to ensure flawless operation of the site's functionality, maintaining its coherence with the design. The work of the coder is crucial and affects many aspects of the project. We make sure that our maestro can work without rushing to achieve the best results.",
+            "details": ["Website development", "Content filling"]
+        },
+        {
+            "number": "04",
+            "heading": "Unrelenting attention to detail",
+            "text": "We provide harmony in our symphony. By conducting tests, we make sure that the application works flawlessly and does not have any bugs when the site opens to everyone.",
+            "details": [
+                "Testing",
+                "Handing over the finished project",
+                "Project launch",
+                "Technologies"
+            ]
+        }
+    ],
+    "technologies": [
+        {
+            "title": "Frontend",
+            "steck": "HTML CSS / JavaScript / React.js / Redux / Next"
+        },
+        {
+            "title": "Backend",
+            "steck": "Node.js / Express"
+        },
+        {
+            "title": "Database",
+            "steck": "MongoDB / FireBase"
+        },
+        {
+            "title": "Design",
+            "steck": "Adobe Photoshop / Adobe Illustrator / Figma"
+        }
+    ],
+    "benefits": [
+        {
+            "id": "01",
+            "data": "zoom-in-left",
+            "delay": "150",
+            "title": "We help you find exceptional and unforgettable concepts",
+            "description": "There is no doubt that many people nowadays know how to create beautiful and stylish websites. But we offer more than just appearance - together with aesthetics, you get an expanded set of functions and capabilities."
+        },
+        {
+            "id": "02",
+            "data": "zoom-in-right",
+            "delay": "250",
+            "title": "We keep secrets within the company",
+            "description": "We accept orders from customers who bring unique technologies to the market that are not similar to the competition. We are fully aware that this work requires special care and we guarantee that your sensitive information will be kept confidential. If necessary, we may also enter into a non-disclosure agreement."
+        },
+        {
+            "id": "03",
+            "data": "zoom-in-left",
+            "delay": "350",
+            "title": "We are vigilant guardians of your technical task",
+            "description": "We have a completely opposite philosophy compared to companies that do not consider listening to the client mandatory. Our main priority is to create a project that will be perfect in all aspects. Therefore, we pay great attention to listening to your needs, fix all the details in the technical task and do not deviate from the given course."
+        },
+        {
+            "id": "04",
+            "data": "zoom-in-right",
+            "delay": "450",
+            "title": "We are open to the use of innovative methods",
+            "description": "We always have a ready arsenal of promising and bold strategies. Not everyone will take such a step, but those who bravely take the risk will thank us later. Maybe you will find the courage to accept this challenge?"
+        }
+    ],
+    "questions":[
+        {
+            "id":"1",
+            "title":"We already have a ready-made site, but we need technical support.Can you help?",
+            "text":"Even if your site was developed by another company, we are ready to provide technical support for your project. We have the ability to allocate a separate team for your project or prioritize tasks according to your needs."
+        },
+        {
+            "id":"2",
+            "title":"What is the price of the web application?",
+            "text":"The cost and terms of development of a web application depend on the complexity of the project and the scope of functionality. To get a preliminary estimate, please fill out an application and provide a detailed description of your project or upload a ready-made technical task. This will help us make a more accurate estimate of the cost and terms of implementation."
+        },
+        {
+            "id":"3",
+            "title":"Can I be informed about the development of the project?",
+            "text":"We provide regular reporting to the client at each stage of development. Before proceeding to the next stage, we agree on the details with you. Our team is always available for communication and ready to provide updates on the progress of the project at any time convenient for you."
+        },
+        {
+            "id":"4",
+            "title":"I want a better site than a competitor's",
+            "text":"This is exactly what we do. We will conduct a detailed study of competitors to identify their strengths and weaknesses. This will help us determine the right way to achieve your goal."
+        }
+    ]
+}

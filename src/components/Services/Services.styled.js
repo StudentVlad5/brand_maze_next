@@ -1,4 +1,4 @@
-import { keyframes, styled } from 'styled-components';
+import { keyframes, styled } from "styled-components";
 
 const fadeInLeftAnimation = keyframes`
   0% {
@@ -119,10 +119,10 @@ export const Subtitle = styled.h2`
   position: relative;
   margin: 30px 0;
 
-  color: ${props => props.theme.heading};
+  color: ${(props) => props.theme.heading};
   text-align: center;
   font-size: 26px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -140,7 +140,7 @@ export const Subtitle = styled.h2`
   &::before {
     @media screen and (min-width: 768px) {
       position: absolute;
-      content: '';
+      content: "";
       top: -20px;
       left: 50px;
 
@@ -170,10 +170,10 @@ export const SubtitleSkills = styled(Subtitle)`
 `;
 
 export const DescriptionSkills = styled.p`
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   text-align: center;
   font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -192,9 +192,9 @@ export const Label = styled.label`
   display: flex;
   justify-content: space-between;
 
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   font-size: 14px;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -211,9 +211,9 @@ export const Label = styled.label`
 `;
 
 export const Text = styled.p`
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   font-size: 15px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.3;
@@ -234,6 +234,7 @@ export const TextCenter = styled(Text)`
 `;
 
 export const TextSlider = styled(Text)`
+  text-align: justify;
   width: 70%;
   padding-bottom: 20px;
 
@@ -244,10 +245,10 @@ export const TextSlider = styled(Text)`
 
 export const TableHeading = styled.th`
   display: flex;
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   text-align: center;
   font-size: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -263,9 +264,9 @@ export const TableHeading = styled.th`
 
 export const TableData = styled.td`
   padding-left: 10px;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   font-size: 20px;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.4;
@@ -316,7 +317,7 @@ export const Number = styled.span`
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  /* background-color: ${props => props.theme.black}; */
+  /* background-color: ${(props) => props.theme.black}; */
 
   @media screen and (min-width: 768px) {
     font-size: 200px;
@@ -335,10 +336,10 @@ export const NumberSmall = styled(Number)`
 export const Heading = styled.h3`
   margin-bottom: 15px;
 
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   text-align: center;
   font-size: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -405,9 +406,9 @@ export const DetailsWrapper = styled.div`
 export const DetailsButton = styled.button`
   padding: 0;
 
-  color: ${props => props.theme.accentRed};
+  color: ${(props) => props.theme.accentRed};
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   text-align: start;
@@ -427,15 +428,15 @@ export const DetailsItem = styled.li`
   align-items: center;
   gap: 8px;
 
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   text-align: start;
 
   & > svg {
-    fill: ${props => props.theme.accentRed};
+    fill: ${(props) => props.theme.accentRed};
   }
 `;
