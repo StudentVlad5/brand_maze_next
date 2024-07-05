@@ -36,11 +36,6 @@ import {
     TextBenefit,
 } from './About.styled';
 
-import chartbar from '../../../public/images/about/mdi_light_chart-bar.svg';
-import chartpie from '../../../public/images/about/mdi_light_chart-pie.svg';
-import flask from '../../../public/images/about/mdi_light_flask.svg';
-import gift from '../../../public/images/about/mdi_light_gift.svg';
-
 import envelop from '../../../public/images/about/envelop.svg';
 import telegram from '../../../public/images/header/telegram.svg';
 import linkedin from '../../../public/images/header/linkedin.svg';

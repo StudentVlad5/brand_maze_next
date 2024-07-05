@@ -26,6 +26,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo2 from '../../../public/images/home/logo2.svg';
 import ph from '../../../public/images/home/ph.png';
+import home from '@/CONST/home.json';
 
 export const Home = () => {
     const { t } = useTranslation();
@@ -46,18 +47,12 @@ export const Home = () => {
                     <ListItem>
                         <ListItemImg src={ph} alt="" />
 
-                        <ListItemText>
-                            {t(
-                                'We work tirelessly to develop long-term relationships with our partners, just as you strive to create strong bonds with the customers who purchase your products or use your services',
-                            )}
-                        </ListItemText>
+                        <ListItemText>{t(home.benefits[0])}</ListItemText>
                     </ListItem>
 
                     <ListItem>
                         <ListItemText>
-                            {t(
-                                'We help create of exceptional brands. This is the embodiment of our business. Under one virtual roof, we do incredible things to achieve this goal:',
-                            )}
+                            {t(home.benefits[1])}
                             <span> {t('building better brands')} </span>
                         </ListItemText>
 
@@ -95,9 +90,7 @@ export const Home = () => {
 
                     <SwiperSlide>
                         <ListItemTextSwiper>
-                            {t(
-                                'We work tirelessly to develop long-term relationships with our partners, just as you strive to create strong bonds with the customers who purchase your products or use your services',
-                            )}
+                            {t(home.benefits[0])}
                         </ListItemTextSwiper>
                     </SwiperSlide>
 
@@ -107,9 +100,7 @@ export const Home = () => {
 
                     <SwiperSlide>
                         <ListItemTextSwiper>
-                            {t(
-                                'We help create of exceptional brands. This is the embodiment of our business. Under one virtual roof, we do incredible things to achieve this goal:',
-                            )}
+                            {t(home.benefits[1])}
                             <span> {t('building better brands')} </span>
                         </ListItemTextSwiper>
                     </SwiperSlide>
@@ -124,55 +115,17 @@ export const Home = () => {
             </ConclusionText>
 
             <CompList>
-                <CompListItem data-aos="zoom-in-left" data-aos-delay="150">
-                    <ItemNumber>01</ItemNumber>
-                    <ItemTitle>{t('Logo')}</ItemTitle>
-                    <ItemDiscr>
-                        {t(
-                            'It is a key element, helps to establish brand identity, enhances recognition and contributes to creating a positive impression.',
-                        )}
-                    </ItemDiscr>
-                </CompListItem>
-
-                <CompListItem data-aos="zoom-in-right" data-aos-delay="250">
-                    <ItemNumber>02</ItemNumber>
-                    <ItemTitle>{t('Web design')}</ItemTitle>
-                    <ItemDiscr>
-                        {t(
-                            'It is responsible for creating an attractive and user-friendly interface that affects the first impression of the user.',
-                        )}
-                    </ItemDiscr>
-                </CompListItem>
-
-                <CompListItem data-aos="zoom-in-left" data-aos-delay="350">
-                    <ItemNumber>03</ItemNumber>
-                    <ItemTitle>{t('Web development')}</ItemTitle>
-                    <ItemDiscr>
-                        {t(
-                            'Allows you to create interactive and dynamic websites that attract customers, improve user interaction and achieve business goals.',
-                        )}
-                    </ItemDiscr>
-                </CompListItem>
-
-                <CompListItem data-aos="zoom-in-right" data-aos-delay="450">
-                    <ItemNumber>04</ItemNumber>
-                    <ItemTitle>Instagram</ItemTitle>
-                    <ItemDiscr>
-                        {t(
-                            'Allows you to effectively promote products or services, demonstrate a unique style, establish contacts with consumers and develop faithful to the brand.',
-                        )}
-                    </ItemDiscr>
-                </CompListItem>
-
-                <CompListItem data-aos="zoom-in-left" data-aos-delay="550">
-                    <ItemNumber>05</ItemNumber>
-                    <ItemTitle>TikTok</ItemTitle>
-                    <ItemDiscr>
-                        {t(
-                            'Allows you to create viral videos, maintain interactivity and communicate with consumers. To attract attention and create a positive image among a wide audience.',
-                        )}
-                    </ItemDiscr>
-                </CompListItem>
+                {home.list.map((it) => (
+                    <CompListItem
+                        data-aos={it.data}
+                        data-aos-delay={it.delay}
+                        key={it.id}
+                    >
+                        <ItemNumber>{it.id}</ItemNumber>
+                        <ItemTitle>{t(it.title)}</ItemTitle>
+                        <ItemDiscr>{t(it.description)}</ItemDiscr>
+                    </CompListItem>
+                ))}
             </CompList>
         </Container>
     );

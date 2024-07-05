@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "original": "/images/projects/barber_project.webp",
+        "thumbnail": "/images/projects/barber_project.webp",
+        "description": "A convenient service for hairdressers, massage salons, which helps users make online reservations for the selected service",
+        "originalAlt": "barbershop project",
+        "title": "A convenient service for hairdressers, massage salons, which helps users make online reservations for the selected service",
+        "url": "https://barbershop-kyiv.vercel.app/"
+    },
+    {
+        "id": 2,
+        "original": "/images/projects/animal_welfare_project.webp",
+        "thumbnail": "/images/projects/animal_welfare_project.webp",
+        "description": "A project that helps to find a pet for yourself or place a homeless animal in good hands",
+        "originalAlt": "animal welfare project",
+        "title": "A project that helps to find a pet for yourself or place a homeless animal in good hands",
+        "url": "https://studentvlad5.github.io/animal-welfare-network/"
+    },
+    {
+        "id": 3,
+        "original": "/images/projects/quillis.webp",
+        "thumbnail": "/images/projects/quillis.webp",
+        "description": "Quillis - stylish online store",
+        "originalAlt": "quillis project",
+        "title": "Quillis - stylish online store",
+        "url": "https://quillis.shop/"
+    },
+    {
+        "id": 4,
+        "original": "/images/projects/filmoteka_project.webp",
+        "thumbnail": "/images/projects/filmoteka_project.webp",
+        "description": "This site helps to choose movies or cartoons for viewing by the whole family and records the preferences of each individual member of the family",
+        "originalAlt": "filmoteka project",
+        "title": "This site helps to choose movies or cartoons for viewing by the whole family and records the preferences of each individual member of the family",
+        "url": "https://filmoteka-home.netlify.app/"
+    },
+    {
+        "id": 5,
+        "original": "/images/projects/ice_cream_project.webp",
+        "thumbnail": "/images/projects/ice_cream_project.webp",
+        "description": "A project for ordering delicious and cold ice cream",
+        "originalAlt": "ice cream project",
+        "title": "A project for ordering delicious and cold ice cream",
+        "url": "https://studentvlad5.github.io/project_ice-cream/"
+    },
+    {
+        "id": 6,
+        "original": "/images/projects/anastasya-studio.webp",
+        "thumbnail": "/images/projects/anastasya-studio.webp",
+        "description": "The site is a business card for the design team",
+        "originalAlt": "Anastasia project",
+        "title": "The site is a business card for the design team",
+        "url": "https://web-studio-yvh6.onrender.com/"
+    },
+    {
+        "id": 7,
+        "original": "/images/projects/salamandra.webp",
+        "thumbnail": "/images/projects/salamandra.webp",
+        "description": "Сafe menu with administrative management",
+        "originalAlt": "salamandra project",
+        "title": "Сafe menu with administrative management",
+        "url": "https://salamandra-cafe.vercel.app/"
+    },
+    {
+        "id": 8,
+        "original": "/images/projects/finance_club.webp",
+        "thumbnail": "/images/projects/finance_club.webp",
+        "description": "The platform for communication between the financial and banking community, the expert environment, regulators and society",
+        "originalAlt": "finance club project",
+        "title": "The platform for communication between the financial and banking community, the expert environment, regulators and society",
+        "url": "https://finance-club-amber.vercel.app/"
+    },
+    {
+        "id": 9,
+        "original": "/images/projects/bloomskill.webp",
+        "thumbnail": "/images/projects/bloomskill.webp",
+        "description": "BloomSkill, information about various events and registration for them",
+        "originalAlt": "bloomskill project",
+        "title": "BloomSkill, information about various events and registration for them",
+        "url": "https://bloomskill.fr/"
+    },
+    {
+        "id": 10,
+        "original": "/images/projects/granat.webp",
+        "thumbnail": "/images/projects/granat.webp",
+        "description": "The website is a visiting card for the bar association",
+        "originalAlt": "bar association project",
+        "title": "The website is a visiting card for the bar association",
+        "url": "https://lawyer-association-granat.vercel.app/"
+    },
+    {
+        "id": 11,
+        "original": "/images/projects/homeforest.webp",
+        "thumbnail": "/images/projects/homeforest.webp",
+        "description": "A stylish online store of plants",
+        "originalAlt": "homeforest shop project",
+        "title": "A stylish online store of plants",
+        "url": "https://indoor-plants-alpha.vercel.app/addition/about_company"
+    }
+]

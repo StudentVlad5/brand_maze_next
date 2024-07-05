@@ -1,11 +1,7 @@
-export default function Home({ params: { lng } }: {
-  params: {
-    lng: string;
-  };
-}) {
+import { Project } from '@/components/Projects/Projects';
+
+export default function ProjectPage() {
   return (
-    <main>
-      <h1>Projects</h1>
-    </main>
+    <Project/>
   );
 }
