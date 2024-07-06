@@ -11,6 +11,7 @@ import { Context } from '../components/Language/LanguageContext';
 import  Provideri18  from './i18/provideri18';
 import i18n from "./i18/i18n";
 import AOS from "@/components/AOS/AOS";
+import { Suspense } from 'react';
 
 
 export default function RootLayout({
@@ -46,7 +47,9 @@ export default function RootLayout({
                 </div>
                 </main>
                 <FooterComp/>
+                <Suspense fallback={<div>Loading...</div>}>
                 <ModalWindow/>
+                </Suspense>
               </StyledComponentRegistry>
           </body>
           </ThemeStatus>
