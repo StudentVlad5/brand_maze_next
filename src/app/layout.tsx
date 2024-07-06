@@ -30,6 +30,9 @@ export default function RootLayout({
      <Context.Provider value={value}>
       <Provideri18>
         <html lang={i18n.language}>
+          <head>
+            <meta name="google-site-verification" content="kAy2gnAs7VekU8r9H5rfr8e6Y8I7n8qNeW2FBcd5rHE" />
+          </head>
           <ThemeStatus>
           <body>
             <AOS/>
