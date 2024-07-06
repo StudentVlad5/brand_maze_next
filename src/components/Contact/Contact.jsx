@@ -131,7 +131,7 @@ export const Contact = () => {
                     <input
                         type="hidden"
                         name="_next"
-                        value="http://localhost:3000/brand-maze-next/contact"
+                        value="https://brand-maze-agency.vercel.app/contact"
                     />
                     <LabelOfItem aria-label="Email">
                         <InputOfItem

@@ -2,7 +2,7 @@
     "name": "brand-maze - the it agency",
     "short_name": "brand-maze",
     "description": "Design of sites of any complexity: Figma, Photoshop.Technologies: React,  React Native, Next, JS, Node, Firebase, MongoDB, Express. Layout: HTML, CSS, JavaScript, Sass/SCSS, LESS.",
-    "start_url": "brand-maze-next/",
+    "start_url": "brand-maze-agency.vercel.app/",
     "icons": [
         { "src": "/favicon.ico", "sizes": "any", "type": "image/x-icon" },
         {
