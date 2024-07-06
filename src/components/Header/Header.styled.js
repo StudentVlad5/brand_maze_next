@@ -1,5 +1,4 @@
 import { keyframes, styled } from "styled-components";
-import mdPlayCircleOutline from "../../../public/images/header/circle_play_icon.svg";
 
 const fadeInTopAnimation = keyframes`
   0% {
@@ -11,7 +10,10 @@ const fadeInTopAnimation = keyframes`
     opacity: 1;
   }
 `;
-
+const rotate = keyframes`
+  100% {
+    transform: rotate(360deg);
+}`;
 export const Header = styled.header`
   color: ${(props) => props.theme.black};
   background-color: transparent;
@@ -82,13 +84,12 @@ export const HeaderSvg = styled.button`
   &:hover {
     transform: scale(1.1);
   }
- 
 
   @media screen and (min-width: 1280px) {
     display: none;
   }
 `;
-export const MovieIcon = styled(mdPlayCircleOutline)`
+export const MovieIcon = styled.div`
   position: absolute;
   left: 170px;
   top: 22px;
@@ -96,6 +97,8 @@ export const MovieIcon = styled(mdPlayCircleOutline)`
   height: 25px;
   cursor: pointer;
   z-index: 500;
+  transition: all 0.5s ease;
+  animation: ${rotate} 3s ease-in-out infinite alternate;
 
   @media screen and (min-width: 768px) {
     left: 180px;

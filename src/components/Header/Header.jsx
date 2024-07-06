@@ -1,8 +1,10 @@
 'use client';
-
+import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import menu from '../../../public/images/header/menu.svg';
 import menuDark from '../../../public/images/header/menu-dark.svg';
+import startMovie from '../../../public/images/video/cinema-star-svgrepo-com.svg';
+import startMovieDark from '../../../public/images/video/cinema-star-svgrepo-com-dark.svg';
 
 import { SwitchTheme } from '../ThemeStatus/SwitcherTheme/SwitchTheme';
 import { Header, HeaderSvg, Logo, LogoBox, MovieIcon } from './Header.styled';
@@ -20,7 +22,7 @@ export default function HeaderComp({ lang, setLanguage }) {
     const [visible, setVisible] = useState('true');
     // const [scrollPos, setScrollPos] = useState(window.scrollY);
     const [scrollPos, setScrollPos] = useState('');
-const { theme } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         setScrollPos(window.scrollY);
@@ -56,7 +58,27 @@ const { theme } = useContext(ThemeContext);
                 >
                     <Logo>Brand maze</Logo>
                 </LogoBox>
-                {/* <MovieIcon onClick={openModalWindow} /> */}
+                <Link href="?modal=true">
+                    <MovieIcon>
+                        {theme === 'light' ? (
+                            <Image
+                                className="svgMenu"
+                                width="35"
+                                height="35"
+                                alt="menu's button"
+                                src={startMovie}
+                            />
+                        ) : (
+                            <Image
+                                className="svgMenu"
+                                width="35"
+                                height="35"
+                                alt="menu's button"
+                                src={startMovieDark}
+                            />
+                        )}
+                    </MovieIcon>
+                </Link>
                 <div
                     style={{
                         display: 'flex',

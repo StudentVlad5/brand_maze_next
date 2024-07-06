@@ -6,6 +6,7 @@ import StyledComponentRegistry from '../lib/registry';
 import { Providers } from './providers';
 import HeaderComp from '../components/Header/Header';
 import {FooterComp} from '../components/Footer/Footer';
+import {ModalWindow} from "@/components/ModalWindow/ModalWindow";
 import { Context } from '../components/Language/LanguageContext';
 import  Provideri18  from './i18/provideri18';
 import i18n from "./i18/i18n";
@@ -45,6 +46,7 @@ export default function RootLayout({
                 </div>
                 </main>
                 <FooterComp/>
+                <ModalWindow/>
               </StyledComponentRegistry>
           </body>
           </ThemeStatus>
