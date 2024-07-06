@@ -40,7 +40,7 @@ import {
 import Image from 'next/image';
 import data from '../../CONST/services.json';
 export const Services = () => {
-    const [showDetails, setShowDetails] = useState(false);
+    const [showDetails, setShowDetails] = useState(null);
     const toggleDetails = () => setShowDetails((state) => !state);
     const { t } = useTranslation();
 
@@ -50,6 +50,7 @@ export const Services = () => {
             left: 0,
             behavior: 'smooth',
         });
+        setShowDetails(false)
     }, []);
 
     return (

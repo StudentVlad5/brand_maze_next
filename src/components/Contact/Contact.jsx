@@ -23,13 +23,13 @@ import { ThemeContext } from '../ThemeStatus/ThemeProvider';
 import { useTranslation } from 'react-i18next';
 
 export const Contact = () => {
-    const [userFirstName, setUserFirstName] = useState('');
-    const [userLastName, setUserLastName] = useState('');
-    const [userEmail, setUserEmail] = useState('');
-    const [userPhone, setUserPhone] = useState('');
-    const [userMessage, setUserMessage] = useState('');
-    const [, setFile] = useState(''); //file,
-    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [userFirstName, setUserFirstName] = useState(null);
+    const [userLastName, setUserLastName] = useState(null);
+    const [userEmail, setUserEmail] = useState(null);
+    const [userPhone, setUserPhone] = useState(null);
+    const [userMessage, setUserMessage] = useState(null);
+    const [, setFile] = useState(null); //file,
+    const [formSubmitted, setFormSubmitted] = useState(null);
     const { t } = useTranslation();
 
     useEffect(() => {
@@ -39,6 +39,14 @@ export const Contact = () => {
             behavior: 'smooth',
         });
         document?.querySelector('html').classList.add('js');
+        setUserFirstName("");
+        setUserLastName('');
+        setUserEmail('');
+        setUserPhone('');
+        setUserMessage('');
+        setFile('');
+        setFormSubmitted(false);
+
     }, []);
 
     useEffect(() => {

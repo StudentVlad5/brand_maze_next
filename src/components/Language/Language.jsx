@@ -1,9 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import i18next from 'i18next';
-import { usePathname, useRouter } from 'next/navigation';
-
 import { SelectContainerLanguage, SelectLanguage } from './Language.styled';
 
 const Language = ({ language, setLanguage }) => {

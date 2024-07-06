@@ -31,12 +31,9 @@ import tiktokDark from '../../../../public/images/header/tiktok-dark.svg';
 import closeDark from '../../../../public/images/header/close-dark.svg';
 
 export const MobileMenu = ({ isOpen, toggleMenu, setIsOpen, theme }) => {
-    //  const [isOpen, setIsOpen] = useState(false);
     const location = usePathname();
     const { t } = useTranslation();
-    //  const toggleMenu = () => {
-    //   setIsOpen(!isOpen);
-    // };
+
     useEffect(() => {
         const stylebody = document.querySelector('body');
         if (isOpen) {
@@ -48,12 +45,10 @@ export const MobileMenu = ({ isOpen, toggleMenu, setIsOpen, theme }) => {
             if (stylebody) {
                 stylebody.style.overflow = 'hidden';
             }
-            // document.querySelector('body').style.overflow = 'hidden';
         } else {
             if (stylebody) {
                 stylebody.style.overflow = 'visible';
             }
-            // document.querySelector('body').style.overflow = 'visible';
         }
     }, [isOpen, setIsOpen]);
 

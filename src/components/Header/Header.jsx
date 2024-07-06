@@ -14,18 +14,17 @@ import Language from '../Language/Language';
 import Image from 'next/image';
 import { ThemeContext } from '../ThemeStatus/ThemeProvider';
 
-// import { openModalWindow } from '../../hooks/ModalWindow';
-// import { ModalWindow } from '../ModalWindow/ModalWindow';
-
 export default function HeaderComp({ lang, setLanguage }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [visible, setVisible] = useState('true');
-    // const [scrollPos, setScrollPos] = useState(window.scrollY);
-    const [scrollPos, setScrollPos] = useState('');
+    const [isOpen, setIsOpen] = useState(null);
+    const [visible, setVisible] = useState(null);
+    const [scrollPos, setScrollPos] = useState(null);
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         setScrollPos(window.scrollY);
+        setIsOpen(false);
+        setVisible('true');
+        setScrollPos('');
     }, []);
 
     useEffect(() => {
