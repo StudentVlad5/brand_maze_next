@@ -1,0 +1,22 @@
+{
+    "home": {
+        "seoTitle": "Home | BrandMaze",
+        "content": "Brand Maze - IT agency. We create an interectig projects and brands. We carefully implement a well-designed process that helps us achieve excellence in everything we do. Бренд Мейз = ІТ агенція. Ми створюємо цікаві проекти та бренди. Ретельно впроваджується добре розроблений процес, який допомагає нам досягати досконалості в усьому, що ми робимо"
+    },
+    "about": {
+        "seoTitle": "About | BrandMaze",
+        "content": "Our approach to project delivery is a holistic approach that includes strategic planning, creative design, rapid website development and an emphasis on building lasting relationships with clients. We work tirelessly to ensure the success and growth of our clients.At Brand Maze, we pride ourselves on our ability to create exceptional brands that capture attention, demonstrate quality and leave a lasting impression. Our team of talented professionals work together, combining strategy, creativity and technology to achieve the best results for our clients.Join us at Brand Maze and let us be your trusted partner in developing your brand. Together we can create the magic that will make your brand stand out and attract more success.Наш підхід до реалізації проєкту — це цілісний підхід, який включає стратегічне планування, креативний дизайн, швидка розробка веб-сайтів та наголос на побудові тривалих відносин із клієнтами. Ми невтомно працюємо, щоб забезпечити успіх і зростання наших клієнтів.У Brand Maze пишаємося своєю здатністю створювати виняткові бренди, які привертають увагу, демонструють якість і залишають незабутнє враження. Наша команда талановитих професіоналів працює разом, поєднуючи стратегію, креативність і технології для досягнення найкращих результатів для наших клієнтів.Приєднуйтесь до нас у Brand Maze і дозвольте нам бути вашим надійним партнером у розвитку вашого бренду. Разом можемо створити магію, яка зробить ваш бренд помітним і приведе до успіху."
+    },
+    "projects": {
+        "seoTitle": "Projects | BrandMaze",
+        "content": "We producted interesting and succsesful project. You can see some of them here. Ми реалізували цікаві та успішні проекти. Ви можете ознайомитися з ними тут"
+    },
+    "services": {
+        "seoTitle": "Services | BrandMaze",
+        "content": "List of our services. Перелік наших сервісів"
+    },
+    "contact": {
+        "seoTitle": "Contact | BrandMaze",
+        "content": "Contact. Контакти"
+    }
+}

@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   position: relative;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Poppins',
     'Manrope', 'Oswald', 'Montserrat', 'Bungee', 'Open Sans', sans-serif;
@@ -289,6 +290,7 @@ img {
 
   @media screen and (min-width: 1280px) {
     max-width: 1280px;
+    width: 90%;
   }
 }
 `;

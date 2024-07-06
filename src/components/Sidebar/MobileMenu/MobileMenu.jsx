@@ -17,7 +17,7 @@ import {
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { Logo } from '../../Header/Header.styled';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import instagram from '../../../../public/images/header/instagram.svg';
 import telegram from '../../../../public/images/header/telegram.svg';

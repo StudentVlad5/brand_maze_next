@@ -1,11 +1,14 @@
-export default function Home({ params: { lng } }: {
-  params: {
-    lng: string;
-  };
-}) {
+import { Contact } from '@/components/Contact/Contact';
+import type { Metadata } from 'next'
+import data from "../../../CONST/metadata.json";
+
+export const metadata: Metadata = {
+  title: data.contact.seoTitle,
+  description: data.contact.content,
+}
+
+export default function ProjectPage() {
   return (
-    <main>
-      <h1 className="Contacts">Home page</h1>
-    </main>
+    <Contact/>
   );
 }

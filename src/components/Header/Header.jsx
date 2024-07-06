@@ -50,7 +50,7 @@ const { theme } = useContext(ThemeContext);
     return (
         <>
             <Header $isvisible={visible}>
-                <LogoBox href="/brand-maze" aria-label="logo company">
+                <LogoBox href="/brand-maze-next" aria-label="logo company">
                     <Logo>Brand maze</Logo>
                 </LogoBox>
                 {/* <MovieIcon onClick={openModalWindow} /> */}

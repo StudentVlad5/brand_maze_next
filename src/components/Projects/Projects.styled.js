@@ -33,7 +33,7 @@ const SlideContainer = styled.div`
 const ContainerProject = styled(Container)`
    @media screen and (min-width: 1280px)  {
     margin-left: 300px;
-    width: 80%;
+    width: 75%;
   }
 `;
 export { SlideContainer, ContainerProject };

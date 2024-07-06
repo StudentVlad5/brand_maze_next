@@ -5,16 +5,12 @@ import { ThemeStatus } from '../components/ThemeStatus/ThemeProvider';
 import StyledComponentRegistry from '../lib/registry';
 import { Providers } from './providers';
 import HeaderComp from '../components/Header/Header';
+import {FooterComp} from '../components/Footer/Footer';
 import { Context } from '../components/Language/LanguageContext';
 import  Provideri18  from './i18/provideri18';
 import i18n from "./i18/i18n";
-import AOS from "@/components/AOS/AOS"
+import AOS from "@/components/AOS/AOS";
 
-// export async function generateStaticParams() {
-//   return languages.map((lng) => ({ lng }))
-// }
-
-// const font = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export default function RootLayout({
   children
@@ -36,16 +32,17 @@ export default function RootLayout({
         <html lang={i18n.language}>
           <ThemeStatus>
           <body>
-            <div className="BaseContainer">
             <AOS/>
               <StyledComponentRegistry>
                 <HeaderComp lang={language} setLanguage={setLanguage}/>
                 <main>
+                <div className="BaseContainer">
                   <Sidebar/>
                   <Providers>{children}</Providers>
+                </div>
                 </main>
+                <FooterComp/>
               </StyledComponentRegistry>
-            </div>
           </body>
           </ThemeStatus>
         </html>
