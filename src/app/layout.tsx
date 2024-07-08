@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { ThemeStatus } from '../components/ThemeStatus/ThemeProvider';
 import StyledComponentRegistry from '../lib/registry';
@@ -34,6 +35,7 @@ export default function RootLayout({
         <html lang={i18n.language}>
           <head>
             <meta name="google-site-verification" content="kAy2gnAs7VekU8r9H5rfr8e6Y8I7n8qNeW2FBcd5rHE" />
+            
           </head>
           <ThemeStatus>
           <body>
@@ -53,6 +55,7 @@ export default function RootLayout({
               </StyledComponentRegistry>
           </body>
           </ThemeStatus>
+          <GoogleAnalytics gaId="G-65NQZ4HZH5" />
         </html>
       </Provideri18>
   </Context.Provider>

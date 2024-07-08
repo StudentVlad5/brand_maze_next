@@ -11,6 +11,7 @@
   "dependencies": {
     "@eslint/config-array": "^0.16.0",
     "@eslint/object-schema": "^2.1.4",
+    "@next/third-parties": "^14.2.4",
     "accept-language": "^3.0.18",
     "aos": "^2.3.4",
     "eslint-config-prettier": "^9.1.0",
